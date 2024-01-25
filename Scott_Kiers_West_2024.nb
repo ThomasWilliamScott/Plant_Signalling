@@ -1,0 +1,2910 @@
+(* Content-type: application/vnd.wolfram.mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 13.1' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       158,          7]
+NotebookDataLength[    113069,       2902]
+NotebookOptionsPosition[    103101,       2738]
+NotebookOutlinePosition[    103495,       2754]
+CellTagsIndexPosition[    103452,       2751]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[TextData[{
+ "This Mathematica document contains all calculations featured in the \
+Supplementary Information for Scott, Kiers & West (2024). Please note that \
+there is some discrepancy between notation used in this Mathematica document \
+and in the article. Specifically, the conditionality of the trait is denoted \
+by ",
+ StyleBox["g",
+  FontSlant->"Italic"],
+ " in the article, but by ",
+ StyleBox["f",
+  FontSlant->"Italic"],
+ " in this document; the focal individual trait value is denoted by ",
+ StyleBox["x_focal",
+  FontSlant->"Italic"],
+ " in the article, but by ",
+ StyleBox["y",
+  FontSlant->"Italic"],
+ " in this document; the deme average trait value is denoted by ",
+ StyleBox["x_deme",
+  FontSlant->"Italic"],
+ " in the article, but by ",
+ StyleBox["z",
+  FontSlant->"Italic"],
+ " in this document; the population average trait value is denoted by ",
+ StyleBox["x_pop",
+  FontSlant->"Italic"],
+ " in the article, but by ",
+ StyleBox["zbar",
+  FontSlant->"Italic"],
+ " in this document."
+}], "Text",
+ CellChangeTimes->{{3.915174872147344*^9, 3.9151749078339043`*^9}, {
+  3.915174958645629*^9, 3.915175096549225*^9}, {3.915175130288045*^9, 
+  3.915175181350585*^9}, {3.915201691885071*^9, 3.9152016935524*^9}, {
+  3.9152055858978157`*^9, 
+  3.9152056717803307`*^9}},ExpressionUUID->"685cb5ce-8020-48ce-96b9-\
+a75886698576"],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Models A & B) Signalling; migration after population regulation\
+\>", "Section",
+ CellChangeTimes->{{3.915174600364295*^9, 3.91517462569272*^9}, 
+   3.91517466765668*^9, {3.915175186685773*^9, 3.915175197207159*^9}, {
+   3.91517755046989*^9, 3.9151775509280024`*^9}, {3.915184515366377*^9, 
+   3.915184552979945*^9}},ExpressionUUID->"eef3e3db-99f7-470a-892d-\
+dcbb5b19ef05"],
+
+Cell["\<\
+Neighbour-modulated fitness for the focal individual (w) is written below. \
+This is Equation A6 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.9151752377757063`*^9, 3.915175259620417*^9}, {
+  3.915175352890313*^9, 3.9151753593515577`*^9}, {3.915201719433642*^9, 
+  3.915201720074353*^9}},ExpressionUUID->"45d5df5b-96cb-462e-9b49-\
+9c92bba9c003"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "=", 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         FractionBox["1", "N"], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"d", "+", 
+          RowBox[{"c", " ", "y"}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{"N", "-", "1"}], "N"], ")"}], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"d", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "z"}], ")"}]}], "+", 
+          RowBox[{"c", " ", "y", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}], "/", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", 
+       RowBox[{
+        RowBox[{"(", 
+         FractionBox["1", "N"], ")"}], 
+        RowBox[{"(", 
+         RowBox[{"d", "+", 
+          RowBox[{"c", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             FractionBox[
+              RowBox[{"z", 
+               RowBox[{"(", 
+                RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+             FractionBox["y", "N"]}], ")"}]}]}], ")"}]}], "-", 
+       RowBox[{
+        RowBox[{"(", 
+         FractionBox[
+          RowBox[{"N", "-", "1"}], "N"], ")"}], 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"d", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", 
+             RowBox[{"(", 
+              RowBox[{
+               FractionBox[
+                RowBox[{"z", 
+                 RowBox[{"(", 
+                  RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+               FractionBox["y", "N"]}], ")"}]}], ")"}]}], "+", 
+          RowBox[{"c", " ", 
+           RowBox[{"(", 
+            RowBox[{
+             FractionBox[
+              RowBox[{"z", 
+               RowBox[{"(", 
+                RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+             FractionBox["y", "N"]}], ")"}], 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}]}], ";"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.908103877779798*^9, 3.9081039368551617`*^9}, {
+   3.9082687020329027`*^9, 3.908268859066394*^9}, {3.908269883914235*^9, 
+   3.908269920730289*^9}, {3.908355862871335*^9, 3.908355902589114*^9}, {
+   3.9108604899938927`*^9, 3.910860560580213*^9}, {3.9113770175862293`*^9, 
+   3.911377066649146*^9}, {3.911391018117175*^9, 3.911391056891016*^9}, 
+   3.915175265985262*^9, {3.915177560180121*^9, 3.9151775756131973`*^9}},
+ CellLabel->"In[1]:=",ExpressionUUID->"6ab4c242-b49a-4fa1-ae28-0ce77f725fde"],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the focal \
+individual trait value, evaluated at monomorphic equilibrium, is written \
+below (as -cm). Note that the \[OpenCurlyQuote]cm\[CloseCurlyQuote] notation \
+is used to represent the \[OpenCurlyQuote]marginal cost\[CloseCurlyQuote] of \
+Hamilton\[CloseCurlyQuote]s Rule. This is Equation A9 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175733249536*^9, 3.915175737026534*^9}, {
+  3.915175857656424*^9, 3.915175883915668*^9}, {3.915201785175893*^9, 
+  3.915201785787332*^9}},ExpressionUUID->"9bb87755-b4bb-4c9f-b40f-\
+dfb9b9707cb4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"D", "[", 
+       RowBox[{"w", ",", "y"}], "]"}]}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"-", "cm"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.915177161684618*^9, 3.9151771773356667`*^9}},
+ CellLabel->"In[2]:=",ExpressionUUID->"24bf0ab3-3e66-438b-8020-e04921876f38"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"N", "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       "d"}], ")"}]}], 
+    RowBox[{"N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+       RowBox[{"d", " ", "N", " ", 
+        RowBox[{"(", 
+         RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.915175743038382*^9, 3.915175768128035*^9}, 
+   3.915175936434854*^9, 3.915177190897686*^9, 3.915177506724401*^9, 
+   3.91517759649308*^9, 3.915185308457467*^9, 3.9151854454804688`*^9, 
+   3.9152057318463173`*^9},
+ CellLabel->
+  "Out[3]//TraditionalForm=",ExpressionUUID->"9a9dd9f8-8161-4db8-80a5-\
+7ac79e94038c"]
+}, Open  ]],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the average trait \
+value of other individuals on the deme, evaluated at monomorphic equilibrium, \
+is written below. Note that the \[OpenCurlyQuote]bm\[CloseCurlyQuote] \
+notation is used to represent the \[OpenCurlyQuote]marginal benefit\
+\[CloseCurlyQuote] of Hamilton\[CloseCurlyQuote]s Rule. This is Equation 10 \
+in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175418488715*^9, 3.915175518937564*^9}, 
+   3.915175722238924*^9, {3.915175920186359*^9, 3.915175930914809*^9}, {
+   3.915201863902808*^9, 
+   3.9152018640063953`*^9}},ExpressionUUID->"d05b3397-2c4e-443c-8583-\
+32f09e2bcb9b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"bm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"w", ",", "z"}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9081039414213743`*^9, 3.9081039435052147`*^9}, {
+   3.90810406510456*^9, 3.908104073589612*^9}, {3.9081043026353397`*^9, 
+   3.9081043339158287`*^9}, 3.908106925554028*^9, {3.911391003528234*^9, 
+   3.9113910075287848`*^9}, {3.9115423725276537`*^9, 3.911542390599454*^9}, {
+   3.915175399934017*^9, 3.915175400756152*^9}, 3.915175723845454*^9, {
+   3.915177193413665*^9, 3.9151771935552893`*^9}},
+ CellLabel->"In[4]:=",ExpressionUUID->"a3605713-800e-4336-b1c7-0e4a604a5416"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", " ", 
+          RowBox[{"(", 
+           RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+      "d"}], ")"}]}], 
+   RowBox[{"N", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+      RowBox[{"c", " ", 
+       RowBox[{"(", 
+        RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+      RowBox[{"d", " ", "N", " ", 
+       RowBox[{"(", 
+        RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.908104066438794*^9, 3.908104073995747*^9}, {
+   3.908104334637701*^9, 3.908104339447672*^9}, 3.908104424387844*^9, 
+   3.90810793331876*^9, 3.908268880209581*^9, 3.9083559231030807`*^9, 
+   3.9108605734536858`*^9, 3.911376842118787*^9, 3.911377086620686*^9, 
+   3.9113911571237173`*^9, 3.911471811646303*^9, 3.911542455073489*^9, 
+   3.9115545156811333`*^9, 3.911555059549644*^9, 3.915175584540079*^9, 
+   3.915175770181059*^9, {3.915175934655409*^9, 3.915175941825774*^9}, 
+   3.915177194903661*^9, 3.915177508380785*^9, 3.915177613264398*^9, 
+   3.9151854491434717`*^9, 3.915205736861938*^9},
+ CellLabel->
+  "Out[4]//TraditionalForm=",ExpressionUUID->"43252716-7a25-4b3f-b1ec-\
+d78da6344c4c"]
+}, Open  ]],
+
+Cell["\<\
+The overall marginal change in neighbour-modulated fitness associated with a \
+slight change in behaviour is written below, on the (false) assumption that \
+relatedness is a constant (open model). The \[OpenCurlyQuote]margopen\
+\[CloseCurlyQuote] notation is used to represent the marginal fitness change, \
+and the open model setting. This is Equation B1 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175958153467*^9, 3.915176040877063*^9}, {
+  3.915177227882449*^9, 3.9151773535121117`*^9}, {3.9152019626637087`*^9, 
+  3.915201962719282*^9}},ExpressionUUID->"f25a8219-dcda-4207-b4eb-\
+94d684749939"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margopen", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "]"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.9081044477104807`*^9, 3.908104459241107*^9}, {
+   3.908104492639288*^9, 3.9081044941536303`*^9}, {3.9081051452016487`*^9, 
+   3.90810514887316*^9}, {3.9151758222548037`*^9, 3.9151758368976316`*^9}, {
+   3.915177197160902*^9, 3.9151772227977467`*^9}, 3.915177266100378*^9},
+ CellLabel->"In[5]:=",ExpressionUUID->"05008782-7791-4357-a2a3-c1f9668e81c2"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"r", "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", " ", 
+          RowBox[{"(", 
+           RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+      "d"}], ")"}]}], 
+   RowBox[{"N", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+      RowBox[{"c", " ", 
+       RowBox[{"(", 
+        RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+      RowBox[{"d", " ", "N", " ", 
+       RowBox[{"(", 
+        RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.9081044594986353`*^9, 3.908104494901422*^9, 3.908105149718433*^9, 
+   3.9081079426689453`*^9, 3.908268887184318*^9, 3.908355930776684*^9, 
+   3.910860606912422*^9, 3.911376884182818*^9, 3.9113771335928373`*^9, 
+   3.911471977218416*^9, 3.91154771336239*^9, 3.911554641393799*^9, 
+   3.9115551823599377`*^9, {3.9151758295380363`*^9, 3.915175837301425*^9}, 
+   3.915175945948777*^9, 3.91517605612919*^9, 3.915177202186002*^9, 
+   3.915177356595026*^9, 3.9151775111263103`*^9, 3.915177625624977*^9, 
+   3.91518566158922*^9, 3.915186018478601*^9, 3.915205738524659*^9},
+ CellLabel->
+  "Out[5]//TraditionalForm=",ExpressionUUID->"bc17dae6-4a52-4137-9794-\
+208bfbc0a601"]
+}, Open  ]],
+
+Cell["\<\
+The condition for a slight increase in the behaviour to be favoured is \
+calculated using the below command. We see that the behaviour is never \
+favoured.\
+\>", "Text",
+ CellChangeTimes->{{3.915176101958577*^9, 3.915176179387744*^9}, {
+  3.915176229291583*^9, 3.915176243005365*^9}, {3.915177406063599*^9, 
+  3.915177410206997*^9}, {3.915177643831272*^9, 
+  3.915177649866047*^9}},ExpressionUUID->"1c5fee6b-d001-4e42-9b27-\
+a5410b7e9ee9"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", "<=", "c", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "f", "<=", "1"}], "&&", 
+     RowBox[{"N", ">", "1"}], "&&", 
+     RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "d", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "r", "<=", "1"}], "&&", 
+     RowBox[{"1", ">", 
+      RowBox[{"d", "+", "c"}]}], "&&", 
+     RowBox[{"margopen", ">", "0"}]}], "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.908108081357972*^9, 3.90810815886198*^9}, 
+   3.9082689167181387`*^9, {3.908275020896943*^9, 3.9082750299584627`*^9}, {
+   3.908275081536397*^9, 3.9082751262301083`*^9}, {3.9082751906324368`*^9, 
+   3.908275193265663*^9}, {3.9082752320393248`*^9, 3.908275277398169*^9}, {
+   3.908275311973724*^9, 3.9082753702498417`*^9}, {3.908275404855864*^9, 
+   3.908275411310329*^9}, {3.911472199070818*^9, 3.911472202133206*^9}, {
+   3.915177205821993*^9, 3.9151772059558477`*^9}, {3.915177361413143*^9, 
+   3.915177361646332*^9}, {3.915177637139866*^9, 3.915177638379718*^9}},
+ CellLabel->"In[6]:=",ExpressionUUID->"ae5ebd9c-9f30-48b5-8b3b-e52d39d1b9de"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.9082689189247103`*^9, {3.9082750095828257`*^9, 3.908275031642332*^9}, {
+   3.908275084386447*^9, 3.908275127976161*^9}, 3.908275193877214*^9, {
+   3.908275233458981*^9, 3.908275248590908*^9}, 3.908275279347251*^9, 
+   3.908275380694973*^9, 3.908275413192636*^9, 3.9083559387106123`*^9, 
+   3.910860622126617*^9, 3.911376898573859*^9, 3.911377143928994*^9, 
+   3.9114720838680353`*^9, 3.911472229947011*^9, 3.911548109194347*^9, 
+   3.911554643668841*^9, 3.915177207879016*^9, 3.9151773650375423`*^9, 
+   3.9151775188673983`*^9, 3.915177639718409*^9, 3.915205740563169*^9},
+ CellLabel->"Out[6]=",ExpressionUUID->"df553131-f395-46aa-9e32-17ffc07809c8"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We now undertake the \[OpenCurlyQuote]closed model\[CloseCurlyQuote] \
+analysis, where relatedness is not considered a constant, but is instead \
+expressed in terms of model parameters. Relatedness is given by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", 
+    FractionBox["1", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"m", "-", "1"}], ")"}], "2"]]}]]}], TraditionalForm]],
+  CellChangeTimes->{{3.910861979123197*^9, 3.9108619999508753`*^9}, {
+    3.91086222963589*^9, 3.9108622426687517`*^9}, 3.910862460959608*^9, 
+    3.9108626243521233`*^9, 3.9114609992207623`*^9, 3.911461049933278*^9, 
+    3.911461104221305*^9, 3.9114637937132893`*^9, {3.9114638920883408`*^9, 
+    3.9114638987610273`*^9}, {3.911464017519855*^9, 3.911464020308721*^9}, 
+    3.911472250412627*^9, 3.911554645377158*^9},ExpressionUUID->
+  "41f6f5ba-b23f-435a-a6be-0592fab3e2ba"],
+ "(Equation A17). We therefore obtain the overall marginal change in \
+neighbour-modulated fitness associated with a slight change in behaviour, on \
+the (true) assumption that relatedness emerges from model parameters.  The \
+\[OpenCurlyQuote]margclosed\[CloseCurlyQuote] notation is used to represent \
+the marginal fitness change, and the closed model setting. This is Equation \
+A18 in the SI. "
+}], "Text",
+ CellChangeTimes->{{3.915176441285725*^9, 3.915176587713168*^9}, {
+  3.915177463317815*^9, 3.9151774714126167`*^9}, {3.915201893168091*^9, 
+  3.915201894284738*^9}, {3.915202007544639*^9, 
+  3.9152020082622538`*^9}},ExpressionUUID->"6a37b233-19a5-434c-a5a3-\
+b4d6384a34e0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margclosed", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"r", "->", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], ")"}], 
+           "/", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"m", "-", "1"}], ")"}], "^", "2"}]}]}], ")"}]}]}], 
+      "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.91517659618088*^9, 3.915176615645871*^9}, 
+   3.915177444830543*^9, {3.915177479766621*^9, 3.915177481869033*^9}},
+ CellLabel->"In[7]:=",ExpressionUUID->"501e4be6-f164-4fcd-81f3-e5b1586b63ad"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+     RowBox[{"(", 
+      RowBox[{"N", "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       "d"}], ")"}]}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}]}], "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+       RowBox[{"d", " ", "N", " ", 
+        RowBox[{"(", 
+         RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.915176616702622*^9, {3.915177474947645*^9, 3.91517748224699*^9}, 
+   3.91517752370538*^9, 3.915177692710291*^9, 3.9152057427838097`*^9},
+ CellLabel->
+  "Out[7]//TraditionalForm=",ExpressionUUID->"bb93181e-71ed-4a1b-88f9-\
+be476181e4e7"]
+}, Open  ]],
+
+Cell["\<\
+The condition for a slight increase in the behaviour to be favoured is \
+calculated using the below command. We see that the behaviour is never \
+favoured. The behaviour is favoured in neither the open nor closed model \
+setting.\
+\>", "Text",
+ CellChangeTimes->{{3.9151769454838057`*^9, 3.9151769716502733`*^9}, {
+  3.91517770399575*^9, 
+  3.9151777276819963`*^9}},ExpressionUUID->"3766a80a-e8dd-4ce5-86a6-\
+6c26e8d93045"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"0", "<", "c", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "f", "<", "1"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+      RowBox[{"0", "<", "d", "<", "1"}], "&&", 
+      RowBox[{"1", ">", 
+       RowBox[{"d", "+", "c"}]}], "&&", 
+      RowBox[{"0", "<", "m", "<", "1"}], "&&", 
+      RowBox[{"margclosed", ">", "0"}]}], "}"}], ",", 
+    RowBox[{"Backsubstitution", "->", "True"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.91086262736821*^9, 3.910862678869877*^9}, 
+   3.911472300688035*^9, {3.911472332014091*^9, 3.911472344399435*^9}, {
+   3.911548186771056*^9, 3.911548189170001*^9}, 3.9115482347234707`*^9, {
+   3.9115482852122593`*^9, 3.9115483160155067`*^9}, {3.915176872170781*^9, 
+   3.9151769012207336`*^9}, {3.915177491578352*^9, 3.9151774916856956`*^9}},
+ CellLabel->"In[8]:=",ExpressionUUID->"6d5f0305-1b66-4d15-a0f2-8af35835d611"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.910862634126298*^9, 3.910862679713876*^9, 3.911377178731172*^9, {
+   3.911472315555702*^9, 3.911472345188623*^9}, 3.911548193938794*^9, 
+   3.911548237122397*^9, {3.91154829494869*^9, 3.911548316947212*^9}, 
+   3.9115546458318996`*^9, 3.9151769039327383`*^9, 3.915177492573509*^9, 
+   3.915177527058111*^9, 3.9151777092089453`*^9, 3.915205744985972*^9},
+ CellLabel->"Out[8]=",ExpressionUUID->"a189c584-8d12-4383-ba35-d645e1533286"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Models C & D) Signalling; migration before population regulation\
+\>", "Section",
+ CellChangeTimes->{{3.915174600364295*^9, 3.91517462569272*^9}, 
+   3.91517466765668*^9, {3.915175186685773*^9, 3.915175197207159*^9}, {
+   3.9151845315098667`*^9, 
+   3.9151845554729557`*^9}},ExpressionUUID->"aa1c85bd-0246-49e0-a27e-\
+a25648c6e879"],
+
+Cell["\<\
+Neighbour-modulated fitness for the focal individual (w) is written below. \
+This is Equation C1 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.9151752377757063`*^9, 3.915175259620417*^9}, {
+  3.915175352890313*^9, 3.9151753593515577`*^9}, {3.915202060281857*^9, 
+  3.915202060344359*^9}},ExpressionUUID->"f5580ae9-2638-4cb4-a379-\
+650590143669"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"w", "=", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", "m"}], ")"}], 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         RowBox[{
+          RowBox[{"(", 
+           FractionBox["1", "N"], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"d", "+", 
+            RowBox[{"c", " ", "y"}]}], ")"}]}], "-", 
+         RowBox[{
+          RowBox[{"(", 
+           FractionBox[
+            RowBox[{"N", "-", "1"}], "N"], ")"}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"d", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "z"}], ")"}]}], "+", 
+            RowBox[{"c", " ", "y", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"(", 
+           RowBox[{"1", "-", "m"}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"1", "-", 
+            RowBox[{
+             RowBox[{"(", 
+              FractionBox["1", "N"], ")"}], 
+             RowBox[{"(", 
+              RowBox[{"d", "+", 
+               RowBox[{"c", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  FractionBox[
+                   RowBox[{"z", 
+                    RowBox[{"(", 
+                    RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+                  FractionBox["y", "N"]}], ")"}]}]}], ")"}]}], "-", 
+            RowBox[{
+             RowBox[{"(", 
+              FractionBox[
+               RowBox[{"N", "-", "1"}], "N"], ")"}], 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"d", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", 
+                  RowBox[{"(", 
+                   RowBox[{
+                    FractionBox[
+                    RowBox[{"z", 
+                    RowBox[{"(", 
+                    RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+                    FractionBox["y", "N"]}], ")"}]}], ")"}]}], "+", 
+               RowBox[{"c", " ", 
+                RowBox[{"(", 
+                 RowBox[{
+                  FractionBox[
+                   RowBox[{"z", 
+                    RowBox[{"(", 
+                    RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+                  FractionBox["y", "N"]}], ")"}], 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}], "+", 
+         
+         RowBox[{"m", 
+          RowBox[{"(", 
+           RowBox[{"1", "-", 
+            RowBox[{
+             RowBox[{"(", 
+              FractionBox["1", "N"], ")"}], 
+             RowBox[{"(", 
+              RowBox[{"d", "+", 
+               RowBox[{"c", " ", "zbar"}]}], ")"}]}], "-", 
+            RowBox[{
+             RowBox[{"(", 
+              FractionBox[
+               RowBox[{"N", "-", "1"}], "N"], ")"}], 
+             RowBox[{"(", 
+              RowBox[{
+               RowBox[{"d", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", "zbar"}], ")"}]}], "+", 
+               RowBox[{"c", " ", "zbar", 
+                RowBox[{"(", 
+                 RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}]}], 
+        ")"}]}]}], "+", 
+     RowBox[{"m", 
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         RowBox[{
+          RowBox[{"(", 
+           FractionBox["1", "N"], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"d", "+", 
+            RowBox[{"c", " ", "y"}]}], ")"}]}], "-", 
+         RowBox[{
+          RowBox[{"(", 
+           FractionBox[
+            RowBox[{"N", "-", "1"}], "N"], ")"}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"d", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "z"}], ")"}]}], "+", 
+            RowBox[{"c", " ", "y", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}], "/", 
+       RowBox[{"(", 
+        RowBox[{"1", "-", 
+         RowBox[{
+          RowBox[{"(", 
+           FractionBox["1", "N"], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"d", "+", 
+            RowBox[{"c", " ", "zbar"}]}], ")"}]}], "-", 
+         RowBox[{
+          RowBox[{"(", 
+           FractionBox[
+            RowBox[{"N", "-", "1"}], "N"], ")"}], 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"d", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "zbar"}], ")"}]}], "+", 
+            RowBox[{"c", " ", "zbar", 
+             RowBox[{"(", 
+              RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}]}]}]}], 
+   ";"}], "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.908103877779798*^9, 3.9081039368551617`*^9}, {
+   3.9082687020329027`*^9, 3.908268859066394*^9}, {3.908269883914235*^9, 
+   3.908269920730289*^9}, {3.908355862871335*^9, 3.908355902589114*^9}, {
+   3.9108604899938927`*^9, 3.910860560580213*^9}, {3.9113770175862293`*^9, 
+   3.911377066649146*^9}, {3.911391018117175*^9, 3.911391056891016*^9}, 
+   3.915175265985262*^9},
+ CellLabel->"In[9]:=",ExpressionUUID->"a21b650b-5cbd-4bbc-a541-202c40a61cec"],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the focal \
+individual trait value, evaluated at monomorphic equilibrium, is written \
+below (as -cm). Note that the \[OpenCurlyQuote]cm\[CloseCurlyQuote] notation \
+is used to represent the \[OpenCurlyQuote]marginal cost\[CloseCurlyQuote] of \
+Hamilton\[CloseCurlyQuote]s Rule. This is Equation C2 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175733249536*^9, 3.915175737026534*^9}, {
+  3.915175857656424*^9, 3.915175883915668*^9}, {3.915202107785346*^9, 
+  3.915202108337833*^9}},ExpressionUUID->"a96f95d9-564e-4b5c-a70a-\
+9626482de7a4"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"D", "[", 
+       RowBox[{"w", ",", "y"}], "]"}]}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"-", "cm"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.915177161684618*^9, 3.9151771773356667`*^9}},
+ CellLabel->"In[10]:=",ExpressionUUID->"d67c21ef-3a92-4094-98b7-603032d7a27a"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"c", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", " ", 
+         RowBox[{"(", 
+          RowBox[{"N", "-", "1"}], ")"}]}], "-", "N"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"m", "-", "1"}], ")"}], "2"], "-", "N"}], ")"}]}], "+", 
+     RowBox[{"d", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"m", "-", "1"}], ")"}], "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"N", "-", "1"}], ")"}]}]}], 
+    RowBox[{"N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+       RowBox[{"d", " ", "N", " ", 
+        RowBox[{"(", 
+         RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.915175743038382*^9, 3.915175768128035*^9}, 
+   3.915175936434854*^9, 3.915177190897686*^9, 3.915177506724401*^9, 
+   3.915205755371426*^9},
+ CellLabel->
+  "Out[11]//TraditionalForm=",ExpressionUUID->"5395bab6-f9af-41c1-b07e-\
+abf14da32504"]
+}, Open  ]],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the average trait \
+value of other individuals on the deme, evaluated at monomorphic equilibrium, \
+is written below. Note that the \[OpenCurlyQuote]bm\[CloseCurlyQuote] \
+notation is used to represent the \[OpenCurlyQuote]marginal benefit\
+\[CloseCurlyQuote] of Hamilton\[CloseCurlyQuote]s Rule. This is Equation C3 \
+in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175418488715*^9, 3.915175518937564*^9}, 
+   3.915175722238924*^9, {3.915175920186359*^9, 3.915175930914809*^9}, {
+   3.915202112427059*^9, 
+   3.915202112942956*^9}},ExpressionUUID->"7bb8876d-2031-40ad-a1c5-\
+a0990cd0c3f0"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"bm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"w", ",", "z"}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9081039414213743`*^9, 3.9081039435052147`*^9}, {
+   3.90810406510456*^9, 3.908104073589612*^9}, {3.9081043026353397`*^9, 
+   3.9081043339158287`*^9}, 3.908106925554028*^9, {3.911391003528234*^9, 
+   3.9113910075287848`*^9}, {3.9115423725276537`*^9, 3.911542390599454*^9}, {
+   3.915175399934017*^9, 3.915175400756152*^9}, 3.915175723845454*^9, {
+   3.915177193413665*^9, 3.9151771935552893`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"0f5499f3-9efa-4849-83aa-c55b74d53ebc"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"N", "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"(", 
+         RowBox[{
+          SuperscriptBox[
+           RowBox[{"(", 
+            RowBox[{"m", "-", "1"}], ")"}], "2"], " ", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}], ")"}]}], "+", 
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"m", "-", "1"}], ")"}], "2"], " ", "N"}], "+", 
+       RowBox[{"d", " ", 
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}]}], ")"}]}], 
+    RowBox[{"N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+       RowBox[{"d", " ", "N", " ", 
+        RowBox[{"(", 
+         RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{{3.908104066438794*^9, 3.908104073995747*^9}, {
+   3.908104334637701*^9, 3.908104339447672*^9}, 3.908104424387844*^9, 
+   3.90810793331876*^9, 3.908268880209581*^9, 3.9083559231030807`*^9, 
+   3.9108605734536858`*^9, 3.911376842118787*^9, 3.911377086620686*^9, 
+   3.9113911571237173`*^9, 3.911471811646303*^9, 3.911542455073489*^9, 
+   3.9115545156811333`*^9, 3.911555059549644*^9, 3.915175584540079*^9, 
+   3.915175770181059*^9, {3.915175934655409*^9, 3.915175941825774*^9}, 
+   3.915177194903661*^9, 3.915177508380785*^9, 3.915205757503585*^9},
+ CellLabel->
+  "Out[12]//TraditionalForm=",ExpressionUUID->"423002de-b226-4064-bbf5-\
+5eb7c01c6af7"]
+}, Open  ]],
+
+Cell["\<\
+The overall marginal change in neighbour-modulated fitness associated with a \
+slight change in behaviour is written below, on the (false) assumption that \
+relatedness is a constant (open model). The \[OpenCurlyQuote]margopen\
+\[CloseCurlyQuote] notation is used to represent the marginal fitness change, \
+and the open model setting. This is Equation D1 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175958153467*^9, 3.915176040877063*^9}, {
+  3.915177227882449*^9, 3.9151773535121117`*^9}, {3.915202480835009*^9, 
+  3.91520248145765*^9}},ExpressionUUID->"1d642f2c-5c9d-4bb4-8ac9-\
+93d16e2e2944"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margopen", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "]"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.9081044477104807`*^9, 3.908104459241107*^9}, {
+   3.908104492639288*^9, 3.9081044941536303`*^9}, {3.9081051452016487`*^9, 
+   3.90810514887316*^9}, {3.9151758222548037`*^9, 3.9151758368976316`*^9}, {
+   3.915177197160902*^9, 3.9151772227977467`*^9}, 3.915177266100378*^9},
+ CellLabel->"In[13]:=",ExpressionUUID->"49378176-ba94-42c9-b7eb-d34187383634"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"c", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", " ", 
+         RowBox[{"(", 
+          RowBox[{"N", "-", "1"}], ")"}]}], "-", "N"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox["m", "2"], "+", 
+        RowBox[{
+         SuperscriptBox[
+          RowBox[{"(", 
+           RowBox[{"m", "-", "1"}], ")"}], "2"], " ", 
+         RowBox[{"(", 
+          RowBox[{"N", "-", "1"}], ")"}], " ", "r"}], "-", 
+        RowBox[{"2", " ", "m"}], "-", "N", "+", "1"}], ")"}]}], "+", 
+     RowBox[{"d", " ", 
+      RowBox[{"(", 
+       RowBox[{"N", "-", "1"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"N", "-", "1"}], ")"}], " ", "r"}], "+", "1"}], ")"}]}], 
+        "-", "r", "+", "1"}], ")"}]}]}], 
+    RowBox[{"N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", 
+        RowBox[{"y", " ", 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+       RowBox[{"d", " ", "N", " ", 
+        RowBox[{"(", 
+         RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]]}], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.9081044594986353`*^9, 3.908104494901422*^9, 3.908105149718433*^9, 
+   3.9081079426689453`*^9, 3.908268887184318*^9, 3.908355930776684*^9, 
+   3.910860606912422*^9, 3.911376884182818*^9, 3.9113771335928373`*^9, 
+   3.911471977218416*^9, 3.91154771336239*^9, 3.911554641393799*^9, 
+   3.9115551823599377`*^9, {3.9151758295380363`*^9, 3.915175837301425*^9}, 
+   3.915175945948777*^9, 3.91517605612919*^9, 3.915177202186002*^9, 
+   3.915177356595026*^9, 3.9151775111263103`*^9, 3.915205760995316*^9},
+ CellLabel->
+  "Out[13]//TraditionalForm=",ExpressionUUID->"cca2276d-eed1-4dd6-8a39-\
+a67341de0a90"]
+}, Open  ]],
+
+Cell["\<\
+The condition for a slight increase in the behaviour to be favoured, on the \
+assumption of zero migration (m=0), is calculated using the below command. We \
+see that, under zero migration, the behaviour is never favoured.\
+\>", "Text",
+ CellChangeTimes->{{3.915176101958577*^9, 3.915176179387744*^9}, {
+  3.915176229291583*^9, 3.915176243005365*^9}, {3.915177406063599*^9, 
+  3.915177410206997*^9}},ExpressionUUID->"814091cb-f6e2-4a7e-940b-\
+e6b192478abe"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", "<=", "c", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "f", "<=", "1"}], "&&", 
+     RowBox[{"N", ">", "1"}], "&&", 
+     RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "d", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "r", "<=", "1"}], "&&", 
+     RowBox[{"m", "==", "0"}], "&&", 
+     RowBox[{"1", ">", 
+      RowBox[{"d", "+", "c"}]}], "&&", 
+     RowBox[{"margopen", ">", "0"}]}], "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.908108081357972*^9, 3.90810815886198*^9}, 
+   3.9082689167181387`*^9, {3.908275020896943*^9, 3.9082750299584627`*^9}, {
+   3.908275081536397*^9, 3.9082751262301083`*^9}, {3.9082751906324368`*^9, 
+   3.908275193265663*^9}, {3.9082752320393248`*^9, 3.908275277398169*^9}, {
+   3.908275311973724*^9, 3.9082753702498417`*^9}, {3.908275404855864*^9, 
+   3.908275411310329*^9}, {3.911472199070818*^9, 3.911472202133206*^9}, {
+   3.915177205821993*^9, 3.9151772059558477`*^9}, {3.915177361413143*^9, 
+   3.915177361646332*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"29864960-ef33-4814-bb7b-347be41625c6"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.9082689189247103`*^9, {3.9082750095828257`*^9, 3.908275031642332*^9}, {
+   3.908275084386447*^9, 3.908275127976161*^9}, 3.908275193877214*^9, {
+   3.908275233458981*^9, 3.908275248590908*^9}, 3.908275279347251*^9, 
+   3.908275380694973*^9, 3.908275413192636*^9, 3.9083559387106123`*^9, 
+   3.910860622126617*^9, 3.911376898573859*^9, 3.911377143928994*^9, 
+   3.9114720838680353`*^9, 3.911472229947011*^9, 3.911548109194347*^9, 
+   3.911554643668841*^9, 3.915177207879016*^9, 3.9151773650375423`*^9, 
+   3.9151775188673983`*^9, 3.915205762706293*^9},
+ CellLabel->"Out[14]=",ExpressionUUID->"32dd3ef0-5050-4158-b811-8f37073df1f4"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The condition for a slight increase in the behaviour to be favoured, on the \
+assumption of full migration (m=1), is calculated using the below command. We \
+see that, under zero migration, the behaviour is favoured when ",
+ Cell[BoxData[
+  RowBox[{
+   FractionBox[
+    RowBox[{"c", " ", 
+     RowBox[{"(", 
+      RowBox[{"f", "+", "N", "-", 
+       RowBox[{"f", " ", "N"}]}], ")"}]}], 
+    RowBox[{"d", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "N"}], ")"}]}]], "<", "r"}]],
+  CellChangeTimes->{{3.908275483978566*^9, 3.908275504780983*^9}, 
+    3.908275535831114*^9, {3.908275689270646*^9, 3.908275704392881*^9}, {
+    3.9083559460241537`*^9, 3.908355948637932*^9}, 3.9108606301358757`*^9, 
+    3.911376903017599*^9, 3.911377154876461*^9, 3.911472244463274*^9, 
+    3.911548111974119*^9, 3.911554644646617*^9},ExpressionUUID->
+  "b024ec28-93e6-4540-9c65-fa37a1c116d3"],
+ ". This is Equation D4 (slightly rearranged) in the SI."
+}], "Text",
+ CellChangeTimes->{{3.915176273466278*^9, 3.915176279609105*^9}, {
+  3.915176337851461*^9, 3.915176359760262*^9}, {3.915177400639497*^9, 
+  3.915177402013357*^9}, {3.915202520975082*^9, 
+  3.915202521661769*^9}},ExpressionUUID->"53ef27b6-ade9-45ec-ab9d-\
+3668546edfd1"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"0", "<", "c", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "f", "<", "1"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+      RowBox[{"0", "<", "d", "<", "1"}], "&&", 
+      RowBox[{"0", "<=", "r", "<=", "1"}], "&&", 
+      RowBox[{"m", "==", "1"}], "&&", 
+      RowBox[{"1", ">", 
+       RowBox[{"d", "+", "c"}]}], "&&", 
+      RowBox[{"margopen", ">", "0"}]}], "}"}], ",", 
+    RowBox[{"Backsubstitution", "->", "True"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.90827547900133*^9, 3.908275526641282*^9}, {
+  3.908275670152458*^9, 3.908275700588422*^9}, {3.9114722372479143`*^9, 
+  3.9114722413253193`*^9}, {3.915177386188711*^9, 3.915177386585072*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"de382b43-3f17-4a3a-9c8e-9108952c42cc"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", "\[Equal]", "1"}], "&&", 
+  RowBox[{"f", "<", "1"}], "&&", 
+  RowBox[{
+   FractionBox[
+    RowBox[{"c", " ", 
+     RowBox[{"(", 
+      RowBox[{"f", "+", "N", "-", 
+       RowBox[{"f", " ", "N"}]}], ")"}]}], 
+    RowBox[{"d", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"-", "1"}], "+", "N"}], ")"}]}]], "<", "r"}], "&&", 
+  RowBox[{"y", "\[GreaterEqual]", "0"}], "&&", 
+  RowBox[{"r", "\[LessEqual]", "1"}], "&&", 
+  RowBox[{"y", "\[LessEqual]", "1"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"d", ">", "0"}], "&&", 
+      RowBox[{
+       RowBox[{"2", " ", "d"}], "\[LessEqual]", "1"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"c", ">", "0"}], "&&", 
+          RowBox[{"c", "<", "d"}], "&&", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"N", "\[GreaterEqual]", 
+               FractionBox["d", 
+                RowBox[{
+                 RowBox[{"-", "c"}], "+", "d"}]]}], "&&", 
+              RowBox[{"f", ">", "0"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               FractionBox[
+                RowBox[{"c", "+", "d"}], "d"], "<", "N"}], "&&", 
+              RowBox[{"N", "<", 
+               FractionBox["d", 
+                RowBox[{
+                 RowBox[{"-", "c"}], "+", "d"}]]}], "&&", 
+              RowBox[{
+               FractionBox["N", 
+                RowBox[{
+                 RowBox[{"-", "1"}], "+", "N"}]], "<", 
+               RowBox[{
+                FractionBox["d", "c"], "+", "f"}]}]}], ")"}]}], ")"}]}], 
+         ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"N", ">", 
+           FractionBox[
+            RowBox[{"c", "+", "d"}], "d"]}], "&&", 
+          RowBox[{"c", "\[GreaterEqual]", "d"}], "&&", 
+          RowBox[{
+           RowBox[{"c", "+", "d"}], "<", "1"}], "&&", 
+          RowBox[{
+           FractionBox["N", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "N"}]], "<", 
+           RowBox[{
+            FractionBox["d", "c"], "+", "f"}]}]}], ")"}]}], ")"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", ">", "0"}], "&&", 
+      RowBox[{
+       RowBox[{"2", " ", "d"}], ">", "1"}], "&&", 
+      RowBox[{
+       RowBox[{"c", "+", "d"}], "<", "1"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"N", "\[GreaterEqual]", 
+           FractionBox["d", 
+            RowBox[{
+             RowBox[{"-", "c"}], "+", "d"}]]}], "&&", 
+          RowBox[{"f", ">", "0"}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           FractionBox[
+            RowBox[{"c", "+", "d"}], "d"], "<", "N"}], "&&", 
+          RowBox[{"N", "<", 
+           FractionBox["d", 
+            RowBox[{
+             RowBox[{"-", "c"}], "+", "d"}]]}], "&&", 
+          RowBox[{
+           FractionBox["N", 
+            RowBox[{
+             RowBox[{"-", "1"}], "+", "N"}]], "<", 
+           RowBox[{
+            FractionBox["d", "c"], "+", "f"}]}]}], ")"}]}], ")"}]}], ")"}]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{{3.908275483978566*^9, 3.908275504780983*^9}, 
+   3.908275535831114*^9, {3.908275689270646*^9, 3.908275704392881*^9}, {
+   3.9083559460241537`*^9, 3.908355948637932*^9}, 3.9108606301358757`*^9, 
+   3.911376903017599*^9, 3.911377154876461*^9, 3.911472244463274*^9, 
+   3.911548111974119*^9, 3.911554644646617*^9, 3.915177387945929*^9, 
+   3.915177438228389*^9, 3.915177520865007*^9, 3.915205765128717*^9},
+ CellLabel->"Out[15]=",ExpressionUUID->"1708905a-0671-498d-b448-65ac497d3056"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We now undertake the \[OpenCurlyQuote]closed model\[CloseCurlyQuote] \
+analysis, where relatedness is not considered a constant, but is instead \
+expressed in terms of model parameters. Relatedness is given by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", 
+    FractionBox["1", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"m", "-", "1"}], ")"}], "2"]]}]]}], TraditionalForm]],
+  CellChangeTimes->{{3.910861979123197*^9, 3.9108619999508753`*^9}, {
+    3.91086222963589*^9, 3.9108622426687517`*^9}, 3.910862460959608*^9, 
+    3.9108626243521233`*^9, 3.9114609992207623`*^9, 3.911461049933278*^9, 
+    3.911461104221305*^9, 3.9114637937132893`*^9, {3.9114638920883408`*^9, 
+    3.9114638987610273`*^9}, {3.911464017519855*^9, 3.911464020308721*^9}, 
+    3.911472250412627*^9, 3.911554645377158*^9},ExpressionUUID->
+  "88e9a451-7b65-4ef5-ad2b-ae678ec82321"],
+ "(Equation A17). We therefore obtain the overall marginal change in \
+neighbour-modulated fitness associated with a slight change in behaviour, on \
+the (true) assumption that relatedness emerges from model parameters.  The \
+\[OpenCurlyQuote]margclosed\[CloseCurlyQuote] notation is used to represent \
+the marginal fitness change, and the closed model setting. This is Equation \
+C4 in the SI. "
+}], "Text",
+ CellChangeTimes->{{3.915176441285725*^9, 3.915176587713168*^9}, {
+  3.915177463317815*^9, 3.9151774714126167`*^9}, {3.915202162057556*^9, 
+  3.9152021995216208`*^9}},ExpressionUUID->"5ebf40e9-1778-43c5-be7a-\
+7405ac196882"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margclosed", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"r", "->", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], ")"}], 
+           "/", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"m", "-", "1"}], ")"}], "^", "2"}]}]}], ")"}]}]}], 
+      "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.91517659618088*^9, 3.915176615645871*^9}, 
+   3.915177444830543*^9, {3.915177479766621*^9, 3.915177481869033*^9}},
+ CellLabel->"In[16]:=",ExpressionUUID->"ea10e739-a763-45e3-b542-84d1f16d9f27"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{"c", " ", 
+    RowBox[{"(", 
+     RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", " ", 
+       RowBox[{"(", 
+        RowBox[{"N", "-", "1"}], ")"}]}], "-", "N"}], ")"}]}], 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"(", 
+        RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+       RowBox[{"(", 
+        RowBox[{"N", "-", "1"}], ")"}]}], "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"-", 
+       RowBox[{"y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}]}], "+", 
+      RowBox[{"c", " ", 
+       RowBox[{"(", 
+        RowBox[{"f", "-", "1"}], ")"}], " ", "N", " ", "y"}], "+", 
+      RowBox[{"d", " ", "N", " ", 
+       RowBox[{"(", 
+        RowBox[{"y", "-", "1"}], ")"}]}], "+", "N"}], ")"}]}]], 
+  TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.915176616702622*^9, {3.915177474947645*^9, 3.91517748224699*^9}, 
+   3.91517752370538*^9, 3.9152057674343777`*^9},
+ CellLabel->
+  "Out[16]//TraditionalForm=",ExpressionUUID->"b8a55fff-b9fa-402b-a958-\
+1fd496e964a6"]
+}, Open  ]],
+
+Cell["\<\
+The condition for a slight increase in the behaviour to be favoured is \
+calculated using the below command. We see that, in this \
+\[OpenCurlyQuote]closed\[CloseCurlyQuote] setting, the behaviour is never \
+favoured.\
+\>", "Text",
+ CellChangeTimes->{{3.9151769454838057`*^9, 
+  3.9151769716502733`*^9}},ExpressionUUID->"7819eeb0-1f08-466f-b046-\
+51cb1b22efc3"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"0", "<", "c", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "f", "<", "1"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+      RowBox[{"0", "<", "d", "<", "1"}], "&&", 
+      RowBox[{"1", ">", 
+       RowBox[{"d", "+", "c"}]}], "&&", 
+      RowBox[{"0", "<", "m", "<", "1"}], "&&", 
+      RowBox[{"margclosed", ">", "0"}]}], "}"}], ",", 
+    RowBox[{"Backsubstitution", "->", "True"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.91086262736821*^9, 3.910862678869877*^9}, 
+   3.911472300688035*^9, {3.911472332014091*^9, 3.911472344399435*^9}, {
+   3.911548186771056*^9, 3.911548189170001*^9}, 3.9115482347234707`*^9, {
+   3.9115482852122593`*^9, 3.9115483160155067`*^9}, {3.915176872170781*^9, 
+   3.9151769012207336`*^9}, {3.915177491578352*^9, 3.9151774916856956`*^9}},
+ CellLabel->"In[17]:=",ExpressionUUID->"8ffffd61-8406-434f-87f4-617d3d00c477"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.910862634126298*^9, 3.910862679713876*^9, 3.911377178731172*^9, {
+   3.911472315555702*^9, 3.911472345188623*^9}, 3.911548193938794*^9, 
+   3.911548237122397*^9, {3.91154829494869*^9, 3.911548316947212*^9}, 
+   3.9115546458318996`*^9, 3.9151769039327383`*^9, 3.915177492573509*^9, 
+   3.915177527058111*^9, 3.91520576940941*^9},
+ CellLabel->"Out[17]=",ExpressionUUID->"6ba660a8-cd19-4d69-ad3c-2182ef143fde"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Models E & F) Cue-suppression; migration after population regulation\
+\>", "Section",
+ CellChangeTimes->{{3.915174600364295*^9, 3.91517462569272*^9}, 
+   3.91517466765668*^9, {3.915175186685773*^9, 3.915175197207159*^9}, {
+   3.91517755046989*^9, 3.9151775509280024`*^9}, {3.915178174251244*^9, 
+   3.915178176160171*^9}, {3.915184562918439*^9, 
+   3.915184568372199*^9}},ExpressionUUID->"040398a3-4a45-46e3-9cd1-\
+865e1abed546"],
+
+Cell["\<\
+Neighbour-modulated fitness for the focal individual (w) is written below.\
+\>", "Text",
+ CellChangeTimes->{{3.9151752377757063`*^9, 3.915175259620417*^9}, {
+  3.915175352890313*^9, 3.9151753593515577`*^9}, {3.915202580661879*^9, 
+  3.915202581910602*^9}},ExpressionUUID->"50c16f6b-77bd-401d-81a4-\
+4ae4d681c945"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"w", "=", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{
+       RowBox[{"(", 
+        FractionBox["1", "N"], ")"}], 
+       RowBox[{"(", 
+        RowBox[{"d", "+", 
+         RowBox[{"c", " ", "y"}]}], ")"}]}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{"N", "-", "1"}], "N"], ")"}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"d", 
+          RowBox[{"(", "z", ")"}]}], "+", 
+         RowBox[{"c", " ", "y", 
+          RowBox[{"(", 
+           RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}], "/", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", 
+      RowBox[{
+       RowBox[{"(", 
+        FractionBox["1", "N"], ")"}], 
+       RowBox[{"(", 
+        RowBox[{"d", "+", 
+         RowBox[{"c", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            FractionBox[
+             RowBox[{"z", 
+              RowBox[{"(", 
+               RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+            FractionBox["y", "N"]}], ")"}]}]}], ")"}]}], "-", 
+      RowBox[{
+       RowBox[{"(", 
+        FractionBox[
+         RowBox[{"N", "-", "1"}], "N"], ")"}], 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"d", 
+          RowBox[{"(", 
+           RowBox[{"(", 
+            RowBox[{
+             FractionBox[
+              RowBox[{"z", 
+               RowBox[{"(", 
+                RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+             FractionBox["y", "N"]}], ")"}], ")"}]}], "+", 
+         RowBox[{"c", " ", 
+          RowBox[{"(", 
+           RowBox[{
+            FractionBox[
+             RowBox[{"z", 
+              RowBox[{"(", 
+               RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+            FractionBox["y", "N"]}], ")"}], 
+          RowBox[{"(", 
+           RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.908103877779798*^9, 3.9081039368551617`*^9}, {
+   3.9082687020329027`*^9, 3.908268859066394*^9}, {3.908269883914235*^9, 
+   3.908269920730289*^9}, {3.908355862871335*^9, 3.908355902589114*^9}, {
+   3.9108604899938927`*^9, 3.910860560580213*^9}, {3.9113770175862293`*^9, 
+   3.911377066649146*^9}, {3.911391018117175*^9, 3.911391056891016*^9}, 
+   3.915175265985262*^9, {3.915177560180121*^9, 3.9151775756131973`*^9}, {
+   3.915178200264545*^9, 3.915178239018537*^9}},
+ CellLabel->"In[18]:=",ExpressionUUID->"4104c392-96b6-4c29-ab36-52d0aba19d49"],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the focal \
+individual trait value, evaluated at monomorphic equilibrium, is written \
+below (as -cm). Note that the \[OpenCurlyQuote]cm\[CloseCurlyQuote] notation \
+is used to represent the \[OpenCurlyQuote]marginal cost\[CloseCurlyQuote] of \
+Hamilton\[CloseCurlyQuote]s Rule. This is Equation E4 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175733249536*^9, 3.915175737026534*^9}, {
+  3.915175857656424*^9, 3.915175883915668*^9}, {3.915202602421441*^9, 
+  3.915202602808991*^9}},ExpressionUUID->"a952d5f5-de64-4dce-92fd-\
+00031a61f240"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"D", "[", 
+       RowBox[{"w", ",", "y"}], "]"}]}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"-", "cm"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.915177161684618*^9, 3.9151771773356667`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"fe76039b-3638-4c90-808f-c65e0a2cc2e9"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"N", "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", "N"}], "-", 
+       RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}], 
+    RowBox[{"N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", "y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       RowBox[{"d", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+      ")"}]}]]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.915175743038382*^9, 3.915175768128035*^9}, 
+   3.915175936434854*^9, 3.915177190897686*^9, 3.915177506724401*^9, 
+   3.91517759649308*^9, 3.915178246888217*^9, 3.915204142631156*^9, 
+   3.915205779310444*^9},
+ CellLabel->
+  "Out[20]//TraditionalForm=",ExpressionUUID->"2a21b6fd-486b-4c33-9615-\
+7e7d954a4122"]
+}, Open  ]],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the average trait \
+value of other individuals on the deme, evaluated at monomorphic equilibrium, \
+is written below. Note that the \[OpenCurlyQuote]bm\[CloseCurlyQuote] \
+notation is used to represent the \[OpenCurlyQuote]marginal benefit\
+\[CloseCurlyQuote] of Hamilton\[CloseCurlyQuote]s Rule. This is Equation E5 \
+in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175418488715*^9, 3.915175518937564*^9}, 
+   3.915175722238924*^9, {3.915175920186359*^9, 3.915175930914809*^9}, {
+   3.915202609953712*^9, 
+   3.915202610239882*^9}},ExpressionUUID->"4c2c2ffb-e217-490f-8eb3-\
+5e5f469f813c"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"bm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"w", ",", "z"}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9081039414213743`*^9, 3.9081039435052147`*^9}, {
+   3.90810406510456*^9, 3.908104073589612*^9}, {3.9081043026353397`*^9, 
+   3.9081043339158287`*^9}, 3.908106925554028*^9, {3.911391003528234*^9, 
+   3.9113910075287848`*^9}, {3.9115423725276537`*^9, 3.911542390599454*^9}, {
+   3.915175399934017*^9, 3.915175400756152*^9}, 3.915175723845454*^9, {
+   3.915177193413665*^9, 3.9151771935552893`*^9}},
+ CellLabel->"In[21]:=",ExpressionUUID->"90659cd5-c69b-42dc-8612-66b47068ad11"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", " ", 
+       RowBox[{"(", 
+        RowBox[{"f", "-", "1"}], ")"}], " ", "N"}], "-", 
+      RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}], 
+   RowBox[{"N", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", " ", "y", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", " ", 
+          RowBox[{"(", 
+           RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+      RowBox[{"d", " ", 
+       RowBox[{"(", 
+        RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+     ")"}]}]], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.908104066438794*^9, 3.908104073995747*^9}, {
+   3.908104334637701*^9, 3.908104339447672*^9}, 3.908104424387844*^9, 
+   3.90810793331876*^9, 3.908268880209581*^9, 3.9083559231030807`*^9, 
+   3.9108605734536858`*^9, 3.911376842118787*^9, 3.911377086620686*^9, 
+   3.9113911571237173`*^9, 3.911471811646303*^9, 3.911542455073489*^9, 
+   3.9115545156811333`*^9, 3.911555059549644*^9, 3.915175584540079*^9, 
+   3.915175770181059*^9, {3.915175934655409*^9, 3.915175941825774*^9}, 
+   3.915177194903661*^9, 3.915177508380785*^9, 3.915177613264398*^9, 
+   3.915178252057168*^9, 3.915204144355439*^9, 3.9152057821011963`*^9},
+ CellLabel->
+  "Out[21]//TraditionalForm=",ExpressionUUID->"466dad75-3e3f-47f5-93a7-\
+6d25933776cd"]
+}, Open  ]],
+
+Cell["\<\
+The overall marginal change in neighbour-modulated fitness associated with a \
+slight change in behaviour is written below, on the (false) assumption that \
+relatedness is a constant (open model). The \[OpenCurlyQuote]margopen\
+\[CloseCurlyQuote] notation is used to represent the marginal fitness change, \
+and the open model setting. This is Equation F1 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175958153467*^9, 3.915176040877063*^9}, {
+  3.915177227882449*^9, 3.9151773535121117`*^9}, {3.915202648822825*^9, 
+  3.9152026494999847`*^9}},ExpressionUUID->"cddfbd31-7bed-42b9-bcc7-\
+cd4999122f0a"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margopen", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "]"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.9081044477104807`*^9, 3.908104459241107*^9}, {
+   3.908104492639288*^9, 3.9081044941536303`*^9}, {3.9081051452016487`*^9, 
+   3.90810514887316*^9}, {3.9151758222548037`*^9, 3.9151758368976316`*^9}, {
+   3.915177197160902*^9, 3.9151772227977467`*^9}, 3.915177266100378*^9},
+ CellLabel->"In[22]:=",ExpressionUUID->"0af63682-ff07-472f-86b3-c74d732ea5ea"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{"N", "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{"r", "-", "1"}], ")"}], " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", " ", 
+       RowBox[{"(", 
+        RowBox[{"f", "-", "1"}], ")"}], " ", "N"}], "-", 
+      RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}], 
+   RowBox[{"N", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", " ", "y", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", " ", 
+          RowBox[{"(", 
+           RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+      RowBox[{"d", " ", 
+       RowBox[{"(", 
+        RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+     ")"}]}]], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.9081044594986353`*^9, 3.908104494901422*^9, 3.908105149718433*^9, 
+   3.9081079426689453`*^9, 3.908268887184318*^9, 3.908355930776684*^9, 
+   3.910860606912422*^9, 3.911376884182818*^9, 3.9113771335928373`*^9, 
+   3.911471977218416*^9, 3.91154771336239*^9, 3.911554641393799*^9, 
+   3.9115551823599377`*^9, {3.9151758295380363`*^9, 3.915175837301425*^9}, 
+   3.915175945948777*^9, 3.91517605612919*^9, 3.915177202186002*^9, 
+   3.915177356595026*^9, 3.9151775111263103`*^9, 3.915177625624977*^9, 
+   3.915178259008362*^9, 3.9152041462330112`*^9, 3.915205784017432*^9},
+ CellLabel->
+  "Out[22]//TraditionalForm=",ExpressionUUID->"757b27c2-6fe1-41a3-8216-\
+aa8a5e5bc7b1"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The condition for a slight increase in the behaviour to be favoured is \
+calculated using the below command. We see that the behaviour is favoured \
+when ",
+ Cell[BoxData[
+  RowBox[{"f", ">", 
+   FractionBox[
+    RowBox[{"d", "-", 
+     RowBox[{"c", " ", "N"}]}], 
+    RowBox[{"c", "-", 
+     RowBox[{"c", " ", "N"}]}]]}]],
+  CellChangeTimes->{
+   3.9082689189247103`*^9, {3.9082750095828257`*^9, 3.908275031642332*^9}, {
+    3.908275084386447*^9, 3.908275127976161*^9}, 3.908275193877214*^9, {
+    3.908275233458981*^9, 3.908275248590908*^9}, 3.908275279347251*^9, 
+    3.908275380694973*^9, 3.908275413192636*^9, 3.9083559387106123`*^9, 
+    3.910860622126617*^9, 3.911376898573859*^9, 3.911377143928994*^9, 
+    3.9114720838680353`*^9, 3.911472229947011*^9, 3.911548109194347*^9, 
+    3.911554643668841*^9, 3.915177207879016*^9, 3.9151773650375423`*^9, 
+    3.9151775188673983`*^9, 3.915177639718409*^9, 3.9151782642447023`*^9},
+  ExpressionUUID->"58bfb91d-1e95-45fe-9e0b-8a747e66627e"],
+ ". This is Equation E7 (rearranged) in the SI. "
+}], "Text",
+ CellChangeTimes->{{3.915176101958577*^9, 3.915176179387744*^9}, {
+  3.915176229291583*^9, 3.915176243005365*^9}, {3.915177406063599*^9, 
+  3.915177410206997*^9}, {3.915177643831272*^9, 3.915177649866047*^9}, {
+  3.915178282165604*^9, 3.915178310651388*^9}, {3.915202988218347*^9, 
+  3.915202988304565*^9}},ExpressionUUID->"30346f09-b0fa-4497-a9f2-\
+d5ce3da08d84"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", "<=", "c", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "f", "<=", "1"}], "&&", 
+     RowBox[{"N", ">", "1"}], "&&", 
+     RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "d", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "r", "<=", "1"}], "&&", 
+     RowBox[{"1", ">", 
+      RowBox[{"d", "+", "c"}]}], "&&", 
+     RowBox[{"margopen", ">", "0"}]}], "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.908108081357972*^9, 3.90810815886198*^9}, 
+   3.9082689167181387`*^9, {3.908275020896943*^9, 3.9082750299584627`*^9}, {
+   3.908275081536397*^9, 3.9082751262301083`*^9}, {3.9082751906324368`*^9, 
+   3.908275193265663*^9}, {3.9082752320393248`*^9, 3.908275277398169*^9}, {
+   3.908275311973724*^9, 3.9082753702498417`*^9}, {3.908275404855864*^9, 
+   3.908275411310329*^9}, {3.911472199070818*^9, 3.911472202133206*^9}, {
+   3.915177205821993*^9, 3.9151772059558477`*^9}, {3.915177361413143*^9, 
+   3.915177361646332*^9}, {3.915177637139866*^9, 3.915177638379718*^9}},
+ CellLabel->"In[23]:=",ExpressionUUID->"463c8ef1-f95e-4223-98a3-e0f5eb86ecbd"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"f", "\[LessEqual]", "1"}], "&&", 
+  RowBox[{"r", "<", "1"}], "&&", 
+  RowBox[{"r", "\[GreaterEqual]", "0"}], "&&", 
+  RowBox[{"y", "\[LessEqual]", "1"}], "&&", 
+  RowBox[{"y", "\[GreaterEqual]", "0"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"f", "\[GreaterEqual]", "0"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"d", ">", "0"}], "&&", 
+          RowBox[{"(", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"c", "\[Equal]", "0"}], "&&", 
+              RowBox[{"d", "<", "1"}]}], ")"}], "||", 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{
+               FractionBox["d", "c"], ">", "N"}], "&&", 
+              RowBox[{"c", "<", "d"}], "&&", 
+              RowBox[{
+               RowBox[{"2", " ", "d"}], "<", "1"}]}], ")"}]}], ")"}]}], ")"}],
+         "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"2", " ", "d"}], "\[GreaterEqual]", "1"}], "&&", 
+          RowBox[{
+           RowBox[{"c", "+", "d"}], "<", "1"}], "&&", 
+          RowBox[{"c", ">", "0"}], "&&", 
+          RowBox[{"d", ">", 
+           RowBox[{"c", " ", "N"}]}]}], ")"}]}], ")"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", ">", "0"}], "&&", 
+      RowBox[{"f", ">", 
+       FractionBox[
+        RowBox[{"d", "-", 
+         RowBox[{"c", " ", "N"}]}], 
+        RowBox[{"c", "-", 
+         RowBox[{"c", " ", "N"}]}]]}], "&&", 
+      RowBox[{
+       FractionBox["d", "c"], "\[LessEqual]", "N"}], "&&", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"d", ">", "0"}], "&&", 
+          RowBox[{"c", "<", "d"}], "&&", 
+          RowBox[{
+           RowBox[{"2", " ", "d"}], "<", "1"}]}], ")"}], "||", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"2", " ", "d"}], "\[GreaterEqual]", "1"}], "&&", 
+          RowBox[{"d", "<", "1"}], "&&", 
+          RowBox[{
+           RowBox[{"c", "+", "d"}], "<", "1"}]}], ")"}]}], ")"}]}], ")"}]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.9082689189247103`*^9, {3.9082750095828257`*^9, 3.908275031642332*^9}, {
+   3.908275084386447*^9, 3.908275127976161*^9}, 3.908275193877214*^9, {
+   3.908275233458981*^9, 3.908275248590908*^9}, 3.908275279347251*^9, 
+   3.908275380694973*^9, 3.908275413192636*^9, 3.9083559387106123`*^9, 
+   3.910860622126617*^9, 3.911376898573859*^9, 3.911377143928994*^9, 
+   3.9114720838680353`*^9, 3.911472229947011*^9, 3.911548109194347*^9, 
+   3.911554643668841*^9, 3.915177207879016*^9, 3.9151773650375423`*^9, 
+   3.9151775188673983`*^9, 3.915177639718409*^9, 3.9151782642447023`*^9, 
+   3.915204151299658*^9, 3.915205787275304*^9},
+ CellLabel->"Out[23]=",ExpressionUUID->"b0dde24b-1bfb-4782-995b-593742e0045d"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We now undertake the \[OpenCurlyQuote]closed model\[CloseCurlyQuote] \
+analysis, where relatedness is not considered a constant, but is instead \
+expressed in terms of model parameters. Relatedness is given by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", 
+    FractionBox["1", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"m", "-", "1"}], ")"}], "2"]]}]]}], TraditionalForm]],
+  CellChangeTimes->{{3.910861979123197*^9, 3.9108619999508753`*^9}, {
+    3.91086222963589*^9, 3.9108622426687517`*^9}, 3.910862460959608*^9, 
+    3.9108626243521233`*^9, 3.9114609992207623`*^9, 3.911461049933278*^9, 
+    3.911461104221305*^9, 3.9114637937132893`*^9, {3.9114638920883408`*^9, 
+    3.9114638987610273`*^9}, {3.911464017519855*^9, 3.911464020308721*^9}, 
+    3.911472250412627*^9, 3.911554645377158*^9},ExpressionUUID->
+  "99c359a9-713a-43e5-a3be-2dc49a0057ec"],
+ "(Equation A17). We therefore obtain the overall marginal change in \
+neighbour-modulated fitness associated with a slight change in behaviour, on \
+the (true) assumption that relatedness emerges from model parameters.  The \
+\[OpenCurlyQuote]margclosed\[CloseCurlyQuote] notation is used to represent \
+the marginal fitness change, and the closed model setting. This is Equation \
+E6 in the SI. "
+}], "Text",
+ CellChangeTimes->{{3.915176441285725*^9, 3.915176587713168*^9}, {
+  3.915177463317815*^9, 3.9151774714126167`*^9}, {3.915202670777313*^9, 
+  3.915202671273993*^9}, {3.9152029790009317`*^9, 
+  3.915202979718953*^9}},ExpressionUUID->"9841d958-651f-40e3-8193-\
+0acb8b57e09b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margclosed", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"r", "->", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], ")"}], 
+           "/", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"m", "-", "1"}], ")"}], "^", "2"}]}]}], ")"}]}]}], 
+      "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.91517659618088*^9, 3.915176615645871*^9}, 
+   3.915177444830543*^9, {3.915177479766621*^9, 3.915177481869033*^9}},
+ CellLabel->"In[24]:=",ExpressionUUID->"9f8da327-e8ab-4d0b-9265-46ebb86d51ca"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+     RowBox[{"(", 
+      RowBox[{"N", "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", 
+        RowBox[{"(", 
+         RowBox[{"f", "-", "1"}], ")"}], " ", "N"}], "-", 
+       RowBox[{"c", " ", "f"}], "+", "d"}], ")"}]}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}]}], "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", "y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       RowBox[{"d", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+      ")"}]}]]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.915176616702622*^9, {3.915177474947645*^9, 3.91517748224699*^9}, 
+   3.91517752370538*^9, 3.915177692710291*^9, 3.915178363069298*^9, 
+   3.915204155495191*^9, 3.9152057881415977`*^9},
+ CellLabel->
+  "Out[24]//TraditionalForm=",ExpressionUUID->"73d1f312-1c7c-49ad-8c28-\
+0565a21b9f01"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The condition for a slight increase in the behaviour to be favoured is \
+calculated using the below command. We see that the behaviour is  favoured \
+when ",
+ Cell[BoxData[
+  RowBox[{
+   FractionBox[
+    RowBox[{"d", "-", 
+     RowBox[{"c", " ", "N"}]}], 
+    RowBox[{"c", "-", 
+     RowBox[{"c", " ", "N"}]}]], "<", "f"}]],
+  CellChangeTimes->{
+   3.910862634126298*^9, 3.910862679713876*^9, 3.911377178731172*^9, {
+    3.911472315555702*^9, 3.911472345188623*^9}, 3.911548193938794*^9, 
+    3.911548237122397*^9, {3.91154829494869*^9, 3.911548316947212*^9}, 
+    3.9115546458318996`*^9, 3.9151769039327383`*^9, 3.915177492573509*^9, 
+    3.915177527058111*^9, 3.9151777092089453`*^9, 3.915178366725424*^9},
+  ExpressionUUID->"74031167-1f9d-49c4-b7b0-68700ae2c16c"],
+ ". This is Equation E7 (rearranged) in the SI. We see that the behaviour is \
+favoured under the same condition in both the open and closed versions of the \
+model, and this is essentially because relatedness is unimportant for \
+evolutionary outcomes in this lifecycle."
+}], "Text",
+ CellChangeTimes->{{3.9151769454838057`*^9, 3.9151769716502733`*^9}, {
+  3.91517770399575*^9, 3.9151777276819963`*^9}, {3.915178376688755*^9, 
+  3.915178465945472*^9}, {3.9152029998081284`*^9, 
+  3.915203000349091*^9}},ExpressionUUID->"00d7ef1d-e8ae-44e1-8141-\
+fd0e3cf02d64"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"0", "<", "c", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "f", "<", "1"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+      RowBox[{"0", "<", "d", "<", "1"}], "&&", 
+      RowBox[{"1", ">", 
+       RowBox[{"d", "+", "c"}]}], "&&", 
+      RowBox[{"0", "<", "m", "<", "1"}], "&&", 
+      RowBox[{"margclosed", ">", "0"}]}], "}"}], ",", 
+    RowBox[{"Backsubstitution", "->", "True"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.91086262736821*^9, 3.910862678869877*^9}, 
+   3.911472300688035*^9, {3.911472332014091*^9, 3.911472344399435*^9}, {
+   3.911548186771056*^9, 3.911548189170001*^9}, 3.9115482347234707`*^9, {
+   3.9115482852122593`*^9, 3.9115483160155067`*^9}, {3.915176872170781*^9, 
+   3.9151769012207336`*^9}, {3.915177491578352*^9, 3.9151774916856956`*^9}},
+ CellLabel->"In[25]:=",ExpressionUUID->"1f5b45f3-8de4-47bc-a39d-7612dbd3b2c5"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"0", "<", "m", "<", "1"}], "&&", 
+  RowBox[{"0", "\[LessEqual]", "y", "\[LessEqual]", "1"}], "&&", 
+  RowBox[{"f", "<", "1"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", ">", "0"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"N", "\[LessEqual]", 
+       FractionBox["d", "c"]}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"N", ">", 
+       FractionBox["d", "c"]}], "&&", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"d", "-", 
+         RowBox[{"c", " ", "N"}]}], 
+        RowBox[{"c", "-", 
+         RowBox[{"c", " ", "N"}]}]], "<", "f"}]}], ")"}]}], ")"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", ">", "0"}], "&&", 
+      RowBox[{
+       RowBox[{"c", "+", "d"}], "<", "1"}], "&&", 
+      RowBox[{
+       RowBox[{"2", " ", "d"}], ">", "1"}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"0", "<", "c", "<", "d"}], "&&", 
+      RowBox[{
+       RowBox[{"2", " ", "d"}], "\[LessEqual]", "1"}]}], ")"}]}], 
+   ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.910862634126298*^9, 3.910862679713876*^9, 3.911377178731172*^9, {
+   3.911472315555702*^9, 3.911472345188623*^9}, 3.911548193938794*^9, 
+   3.911548237122397*^9, {3.91154829494869*^9, 3.911548316947212*^9}, 
+   3.9115546458318996`*^9, 3.9151769039327383`*^9, 3.915177492573509*^9, 
+   3.915177527058111*^9, 3.9151777092089453`*^9, 3.915178366725424*^9, 
+   3.9152041595576344`*^9, 3.9152057905188103`*^9},
+ CellLabel->"Out[25]=",ExpressionUUID->"0795684b-60eb-4756-83db-fa7660c2ea7c"]
+}, Open  ]]
+}, Closed]],
+
+Cell[CellGroupData[{
+
+Cell["\<\
+Models G & H) Cue-suppression; migration before population regulation\
+\>", "Section",
+ CellChangeTimes->{{3.915174600364295*^9, 3.91517462569272*^9}, 
+   3.91517466765668*^9, {3.915175186685773*^9, 3.915175197207159*^9}, 
+   3.915177935400619*^9, {3.915184565003374*^9, 
+   3.915184571753236*^9}},ExpressionUUID->"5e6dbf40-4a8f-4fe4-93ed-\
+1ed86cbee34d"],
+
+Cell["\<\
+Neighbour-modulated fitness for the focal individual (w) is written below. \
+\>", "Text",
+ CellChangeTimes->{{3.9151752377757063`*^9, 3.915175259620417*^9}, {
+   3.915175352890313*^9, 3.9151753593515577`*^9}, 
+   3.9152034697990303`*^9},ExpressionUUID->"179394d0-db8a-43a2-8181-\
+6dfaa582789e"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"w", "=", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"1", "-", "m"}], ")"}], 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{
+         RowBox[{"(", 
+          FractionBox["1", "N"], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"d", "+", 
+           RowBox[{"c", " ", "y"}]}], ")"}]}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{"N", "-", "1"}], "N"], ")"}], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"d", 
+            RowBox[{"(", "z", ")"}]}], "+", 
+           RowBox[{"c", " ", "y", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"(", 
+          RowBox[{"1", "-", "m"}], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"(", 
+             FractionBox["1", "N"], ")"}], 
+            RowBox[{"(", 
+             RowBox[{"d", "+", 
+              RowBox[{"c", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 FractionBox[
+                  RowBox[{"z", 
+                   RowBox[{"(", 
+                    RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+                 FractionBox["y", "N"]}], ")"}]}]}], ")"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             FractionBox[
+              RowBox[{"N", "-", "1"}], "N"], ")"}], 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"d", 
+               RowBox[{"(", 
+                RowBox[{"(", 
+                 RowBox[{
+                  FractionBox[
+                   RowBox[{"z", 
+                    RowBox[{"(", 
+                    RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+                  FractionBox["y", "N"]}], ")"}], ")"}]}], "+", 
+              RowBox[{"c", " ", 
+               RowBox[{"(", 
+                RowBox[{
+                 FractionBox[
+                  RowBox[{"z", 
+                   RowBox[{"(", 
+                    RowBox[{"N", "-", "1"}], ")"}]}], "N"], "+", 
+                 FractionBox["y", "N"]}], ")"}], 
+               RowBox[{"(", 
+                RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}], "+", 
+        RowBox[{"m", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", 
+           RowBox[{
+            RowBox[{"(", 
+             FractionBox["1", "N"], ")"}], 
+            RowBox[{"(", 
+             RowBox[{"d", "+", 
+              RowBox[{"c", " ", "zbar"}]}], ")"}]}], "-", 
+           RowBox[{
+            RowBox[{"(", 
+             FractionBox[
+              RowBox[{"N", "-", "1"}], "N"], ")"}], 
+            RowBox[{"(", 
+             RowBox[{
+              RowBox[{"d", 
+               RowBox[{"(", "zbar", ")"}]}], "+", 
+              RowBox[{"c", " ", "zbar", 
+               RowBox[{"(", 
+                RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}]}], 
+       ")"}]}]}], "+", 
+    RowBox[{"m", 
+     RowBox[{
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{
+         RowBox[{"(", 
+          FractionBox["1", "N"], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"d", "+", 
+           RowBox[{"c", " ", "y"}]}], ")"}]}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{"N", "-", "1"}], "N"], ")"}], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"d", 
+            RowBox[{"(", "z", ")"}]}], "+", 
+           RowBox[{"c", " ", "y", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}], "/", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", 
+        RowBox[{
+         RowBox[{"(", 
+          FractionBox["1", "N"], ")"}], 
+         RowBox[{"(", 
+          RowBox[{"d", "+", 
+           RowBox[{"c", " ", "zbar"}]}], ")"}]}], "-", 
+        RowBox[{
+         RowBox[{"(", 
+          FractionBox[
+           RowBox[{"N", "-", "1"}], "N"], ")"}], 
+         RowBox[{"(", 
+          RowBox[{
+           RowBox[{"d", 
+            RowBox[{"(", "zbar", ")"}]}], "+", 
+           RowBox[{"c", " ", "zbar", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "f"}], ")"}]}]}], ")"}]}]}], ")"}]}]}]}]}], 
+  ";"}]], "Input",
+ CellChangeTimes->{{3.908103877779798*^9, 3.9081039368551617`*^9}, {
+   3.9082687020329027`*^9, 3.908268859066394*^9}, {3.908269883914235*^9, 
+   3.908269920730289*^9}, {3.908355862871335*^9, 3.908355902589114*^9}, {
+   3.9108604899938927`*^9, 3.910860560580213*^9}, {3.9113770175862293`*^9, 
+   3.911377066649146*^9}, {3.911391018117175*^9, 3.911391056891016*^9}, 
+   3.915175265985262*^9, {3.91517795501114*^9, 3.915177969866983*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"c9b86c00-c65a-4e56-9b5f-c789e091a106"],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the focal \
+individual trait value, evaluated at monomorphic equilibrium, is written \
+below (as -cm). Note that the \[OpenCurlyQuote]cm\[CloseCurlyQuote] notation \
+is used to represent the \[OpenCurlyQuote]marginal cost\[CloseCurlyQuote] of \
+Hamilton\[CloseCurlyQuote]s Rule. This is Equation G1 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175733249536*^9, 3.915175737026534*^9}, {
+  3.915175857656424*^9, 3.915175883915668*^9}, {3.915203490603609*^9, 
+  3.915203495714188*^9}},ExpressionUUID->"725accf9-794f-475c-b7b9-\
+29ca28733c18"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[{
+ RowBox[{
+  RowBox[{"cm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"-", 
+      RowBox[{"D", "[", 
+       RowBox[{"w", ",", "y"}], "]"}]}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], 
+  ";"}], "\[IndentingNewLine]", 
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"-", "cm"}], "]"}]}], "Input",
+ CellChangeTimes->{{3.915177161684618*^9, 3.9151771773356667`*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"c4be2823-9b43-489e-80e0-b90c9ed5ef61"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"d", " ", 
+      SuperscriptBox[
+       RowBox[{"(", 
+        RowBox[{"m", "-", "1"}], ")"}], "2"], " ", 
+      RowBox[{"(", 
+       RowBox[{"N", "-", "1"}], ")"}]}], "-", 
+     RowBox[{"c", " ", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{"f", " ", 
+         RowBox[{"(", 
+          RowBox[{"N", "-", "1"}], ")"}]}], "-", "N"}], ")"}], " ", 
+      RowBox[{"(", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"m", "-", "1"}], ")"}], "2"], "-", "N"}], ")"}]}]}], 
+    RowBox[{"N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", "y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       RowBox[{"d", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+      ")"}]}]]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.915175743038382*^9, 3.915175768128035*^9}, 
+   3.915175936434854*^9, 3.915177190897686*^9, 3.915177506724401*^9, 
+   3.915177978752042*^9, 3.915205805517651*^9},
+ CellLabel->
+  "Out[28]//TraditionalForm=",ExpressionUUID->"f13752ef-3b22-4579-b6bb-\
+59b822e50954"]
+}, Open  ]],
+
+Cell["\<\
+The derivative of focal individual fitness, with respect to the average trait \
+value of other individuals on the deme, evaluated at monomorphic equilibrium, \
+is written below. Note that the \[OpenCurlyQuote]bm\[CloseCurlyQuote] \
+notation is used to represent the \[OpenCurlyQuote]marginal benefit\
+\[CloseCurlyQuote] of Hamilton\[CloseCurlyQuote]s Rule. This is Equation G2 \
+in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175418488715*^9, 3.915175518937564*^9}, 
+   3.915175722238924*^9, {3.915175920186359*^9, 3.915175930914809*^9}, {
+   3.915203501107039*^9, 
+   3.915203501387886*^9}},ExpressionUUID->"d8f09699-d5da-46db-bba5-\
+ad240c940a93"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"bm", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"D", "[", 
+      RowBox[{"w", ",", "z"}], "]"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{
+       RowBox[{"zbar", "->", "y"}], ",", 
+       RowBox[{"z", "->", "y"}]}], "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.9081039414213743`*^9, 3.9081039435052147`*^9}, {
+   3.90810406510456*^9, 3.908104073589612*^9}, {3.9081043026353397`*^9, 
+   3.9081043339158287`*^9}, 3.908106925554028*^9, {3.911391003528234*^9, 
+   3.9113910075287848`*^9}, {3.9115423725276537`*^9, 3.911542390599454*^9}, {
+   3.915175399934017*^9, 3.915175400756152*^9}, 3.915175723845454*^9, {
+   3.915177193413665*^9, 3.9151771935552893`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"adc28761-8fbb-4d25-b2d6-06cc58d79bc4"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{"N", "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"m", "-", "1"}], ")"}], "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       RowBox[{"d", " ", 
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], "-", 
+       RowBox[{"d", " ", 
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"m", "-", "1"}], ")"}], "2"]}]}], ")"}]}], 
+    RowBox[{"N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", "y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       RowBox[{"d", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+      ")"}]}]]}], TraditionalForm]], "Output",
+ CellChangeTimes->{{3.908104066438794*^9, 3.908104073995747*^9}, {
+   3.908104334637701*^9, 3.908104339447672*^9}, 3.908104424387844*^9, 
+   3.90810793331876*^9, 3.908268880209581*^9, 3.9083559231030807`*^9, 
+   3.9108605734536858`*^9, 3.911376842118787*^9, 3.911377086620686*^9, 
+   3.9113911571237173`*^9, 3.911471811646303*^9, 3.911542455073489*^9, 
+   3.9115545156811333`*^9, 3.911555059549644*^9, 3.915175584540079*^9, 
+   3.915175770181059*^9, {3.915175934655409*^9, 3.915175941825774*^9}, 
+   3.915177194903661*^9, 3.915177508380785*^9, 3.915177983034183*^9, 
+   3.915205807478541*^9},
+ CellLabel->
+  "Out[29]//TraditionalForm=",ExpressionUUID->"6efe32f4-8cd2-4586-826f-\
+ec881310773b"]
+}, Open  ]],
+
+Cell["\<\
+The overall marginal change in neighbour-modulated fitness associated with a \
+slight change in behaviour is written below, on the (false) assumption that \
+relatedness is a constant (open model). The \[OpenCurlyQuote]margopen\
+\[CloseCurlyQuote] notation is used to represent the marginal fitness change, \
+and the open model setting. This is Equation H1 in the SI.\
+\>", "Text",
+ CellChangeTimes->{{3.915175958153467*^9, 3.915176040877063*^9}, {
+  3.915177227882449*^9, 3.9151773535121117`*^9}, {3.915203566489521*^9, 
+  3.915203566567294*^9}},ExpressionUUID->"4b7fc4aa-a658-49b6-8cca-\
+d93440e90155"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margopen", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "]"}]}], "]"}]], "Input",\
+
+ CellChangeTimes->{{3.9081044477104807`*^9, 3.908104459241107*^9}, {
+   3.908104492639288*^9, 3.9081044941536303`*^9}, {3.9081051452016487`*^9, 
+   3.90810514887316*^9}, {3.9151758222548037`*^9, 3.9151758368976316`*^9}, {
+   3.915177197160902*^9, 3.9151772227977467`*^9}, 3.915177266100378*^9},
+ CellLabel->"In[30]:=",ExpressionUUID->"0225feb0-71ca-4190-b536-c9cbee7cacb3"],
+
+Cell[BoxData[
+ FormBox[
+  FractionBox[
+   RowBox[{
+    RowBox[{"c", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"f", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}]}], "-", "N"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       SuperscriptBox["m", "2"], "+", 
+       RowBox[{
+        SuperscriptBox[
+         RowBox[{"(", 
+          RowBox[{"m", "-", "1"}], ")"}], "2"], " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}], " ", "r"}], "-", 
+       RowBox[{"2", " ", "m"}], "-", "N", "+", "1"}], ")"}]}], "-", 
+    RowBox[{"d", " ", 
+     RowBox[{"(", 
+      RowBox[{"N", "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{"N", "-", "1"}], ")"}], " ", "r"}], "+", "1"}], ")"}]}], 
+       "-", "r", "+", "1"}], ")"}]}]}], 
+   RowBox[{"N", " ", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"c", " ", "y", " ", 
+       RowBox[{"(", 
+        RowBox[{
+         RowBox[{"f", " ", 
+          RowBox[{"(", 
+           RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+      RowBox[{"d", " ", 
+       RowBox[{"(", 
+        RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+     ")"}]}]], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.9081044594986353`*^9, 3.908104494901422*^9, 3.908105149718433*^9, 
+   3.9081079426689453`*^9, 3.908268887184318*^9, 3.908355930776684*^9, 
+   3.910860606912422*^9, 3.911376884182818*^9, 3.9113771335928373`*^9, 
+   3.911471977218416*^9, 3.91154771336239*^9, 3.911554641393799*^9, 
+   3.9115551823599377`*^9, {3.9151758295380363`*^9, 3.915175837301425*^9}, 
+   3.915175945948777*^9, 3.91517605612919*^9, 3.915177202186002*^9, 
+   3.915177356595026*^9, 3.9151775111263103`*^9, 3.915177988827108*^9, 
+   3.9152058092219887`*^9},
+ CellLabel->
+  "Out[30]//TraditionalForm=",ExpressionUUID->"2d45c24d-160b-448b-8519-\
+b77b2dcd9f22"]
+}, Open  ]],
+
+Cell["\<\
+The condition for a slight increase in the behaviour to be favoured, on the \
+assumption of full migration (m=1), is calculated using the below command. We \
+see that, under full migration, the behaviour is never favoured.\
+\>", "Text",
+ CellChangeTimes->{{3.915176101958577*^9, 3.915176179387744*^9}, {
+  3.915176229291583*^9, 3.915176243005365*^9}, {3.915177406063599*^9, 
+  3.915177410206997*^9}, {3.915178003532593*^9, 
+  3.915178009277268*^9}},ExpressionUUID->"f9e653d0-4271-46db-8c5f-\
+f52d1960fd8e"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{"{", 
+    RowBox[{
+     RowBox[{"0", "<=", "c", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "f", "<=", "1"}], "&&", 
+     RowBox[{"N", ">", "1"}], "&&", 
+     RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "d", "<=", "1"}], "&&", 
+     RowBox[{"0", "<=", "r", "<=", "1"}], "&&", 
+     RowBox[{"m", "==", "1"}], "&&", 
+     RowBox[{"1", ">", 
+      RowBox[{"d", "+", "c"}]}], "&&", 
+     RowBox[{"margopen", ">", "0"}]}], "}"}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.908108081357972*^9, 3.90810815886198*^9}, 
+   3.9082689167181387`*^9, {3.908275020896943*^9, 3.9082750299584627`*^9}, {
+   3.908275081536397*^9, 3.9082751262301083`*^9}, {3.9082751906324368`*^9, 
+   3.908275193265663*^9}, {3.9082752320393248`*^9, 3.908275277398169*^9}, {
+   3.908275311973724*^9, 3.9082753702498417`*^9}, {3.908275404855864*^9, 
+   3.908275411310329*^9}, {3.911472199070818*^9, 3.911472202133206*^9}, {
+   3.915177205821993*^9, 3.9151772059558477`*^9}, {3.915177361413143*^9, 
+   3.915177361646332*^9}, {3.915178001412785*^9, 3.915178001471287*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"64b5d706-b0a7-4a82-bf91-c0e42723d69e"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.9082689189247103`*^9, {3.9082750095828257`*^9, 3.908275031642332*^9}, {
+   3.908275084386447*^9, 3.908275127976161*^9}, 3.908275193877214*^9, {
+   3.908275233458981*^9, 3.908275248590908*^9}, 3.908275279347251*^9, 
+   3.908275380694973*^9, 3.908275413192636*^9, 3.9083559387106123`*^9, 
+   3.910860622126617*^9, 3.911376898573859*^9, 3.911377143928994*^9, 
+   3.9114720838680353`*^9, 3.911472229947011*^9, 3.911548109194347*^9, 
+   3.911554643668841*^9, 3.915177207879016*^9, 3.9151773650375423`*^9, 
+   3.9151775188673983`*^9, 3.915178011045245*^9, 3.915205810872473*^9},
+ CellLabel->"Out[31]=",ExpressionUUID->"6602f408-9d02-44e5-bead-26de8999afa6"]
+}, Open  ]],
+
+Cell[TextData[{
+ "The condition for a slight increase in the behaviour to be favoured, on the \
+assumption of zero migration (m=0), is calculated using the below command. We \
+see that, under zero migration, the behaviour is favoured when ",
+ Cell[BoxData[
+  RowBox[{
+   FractionBox[
+    RowBox[{"d", "-", 
+     RowBox[{"c", " ", "N"}]}], 
+    RowBox[{"c", "-", 
+     RowBox[{"c", " ", "N"}]}]], "<", "f"}]],
+  CellChangeTimes->{{3.908275483978566*^9, 3.908275504780983*^9}, 
+    3.908275535831114*^9, {3.908275689270646*^9, 3.908275704392881*^9}, {
+    3.9083559460241537`*^9, 3.908355948637932*^9}, 3.9108606301358757`*^9, 
+    3.911376903017599*^9, 3.911377154876461*^9, 3.911472244463274*^9, 
+    3.911548111974119*^9, 3.911554644646617*^9, 3.915177387945929*^9, 
+    3.915177438228389*^9, 3.915177520865007*^9, {3.915178021070498*^9, 
+    3.9151780402354317`*^9}},ExpressionUUID->
+  "4bed6ede-933f-4e45-baf3-0548ad20e804"],
+ ". This is Equation E7 (rearranged) in the SI."
+}], "Text",
+ CellChangeTimes->{{3.915176273466278*^9, 3.915176279609105*^9}, {
+   3.915176337851461*^9, 3.915176359760262*^9}, {3.915177400639497*^9, 
+   3.915177402013357*^9}, {3.915178013962927*^9, 3.915178016675682*^9}, 
+   3.9151780655440397`*^9, {3.915178105500216*^9, 3.915178107023058*^9}, {
+   3.915203656179706*^9, 
+   3.915203659734796*^9}},ExpressionUUID->"55c2aa31-f5bf-43bb-bb55-\
+1c34a3a80b43"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"0", "<", "c", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "f", "<", "1"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+      RowBox[{"0", "<", "d", "<", "1"}], "&&", 
+      RowBox[{"0", "<=", "r", "<=", "1"}], "&&", 
+      RowBox[{"m", "==", "0"}], "&&", 
+      RowBox[{"1", ">", 
+       RowBox[{"d", "+", "c"}]}], "&&", 
+      RowBox[{"margopen", ">", "0"}]}], "}"}], ",", 
+    RowBox[{"Backsubstitution", "->", "True"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.90827547900133*^9, 3.908275526641282*^9}, {
+   3.908275670152458*^9, 3.908275700588422*^9}, {3.9114722372479143`*^9, 
+   3.9114722413253193`*^9}, {3.915177386188711*^9, 3.915177386585072*^9}, 
+   3.915178039525638*^9},
+ CellLabel->"In[32]:=",ExpressionUUID->"677d8d81-1c11-4a10-8af1-2befe2e38179"],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"m", "\[Equal]", "0"}], "&&", 
+  RowBox[{"f", "<", "1"}], "&&", 
+  RowBox[{"r", "<", "1"}], "&&", 
+  RowBox[{"r", "\[GreaterEqual]", "0"}], "&&", 
+  RowBox[{"y", "\[GreaterEqual]", "0"}], "&&", 
+  RowBox[{"y", "\[LessEqual]", "1"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"f", ">", "0"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"N", "\[LessEqual]", 
+       FractionBox["d", "c"]}]}], ")"}], "||", 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"N", ">", 
+       FractionBox["d", "c"]}], "&&", 
+      RowBox[{
+       FractionBox[
+        RowBox[{"d", "-", 
+         RowBox[{"c", " ", "N"}]}], 
+        RowBox[{"c", "-", 
+         RowBox[{"c", " ", "N"}]}]], "<", "f"}]}], ")"}]}], ")"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"c", "<", "d"}], "||", 
+    RowBox[{
+     RowBox[{"2", " ", "d"}], ">", "1"}]}], ")"}], "&&", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{
+     RowBox[{"c", "+", "d"}], "<", "1"}], "||", 
+    RowBox[{
+     RowBox[{"2", " ", "d"}], "\[LessEqual]", "1"}]}], ")"}], "&&", 
+  RowBox[{"c", ">", "0"}]}]], "Output",
+ CellChangeTimes->{{3.908275483978566*^9, 3.908275504780983*^9}, 
+   3.908275535831114*^9, {3.908275689270646*^9, 3.908275704392881*^9}, {
+   3.9083559460241537`*^9, 3.908355948637932*^9}, 3.9108606301358757`*^9, 
+   3.911376903017599*^9, 3.911377154876461*^9, 3.911472244463274*^9, 
+   3.911548111974119*^9, 3.911554644646617*^9, 3.915177387945929*^9, 
+   3.915177438228389*^9, 3.915177520865007*^9, {3.915178021070498*^9, 
+   3.9151780402354317`*^9}, 3.91520581319967*^9},
+ CellLabel->"Out[32]=",ExpressionUUID->"5583c201-7a91-4af1-853f-cc45063a5ce6"]
+}, Open  ]],
+
+Cell[TextData[{
+ "We now undertake the \[OpenCurlyQuote]closed model\[CloseCurlyQuote] \
+analysis, where relatedness is not considered a constant, but is instead \
+expressed in terms of model parameters. Relatedness is given by ",
+ Cell[BoxData[
+  FormBox[
+   RowBox[{"r", "=", 
+    FractionBox["1", 
+     RowBox[{"1", "-", 
+      FractionBox[
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], 
+       SuperscriptBox[
+        RowBox[{"(", 
+         RowBox[{"m", "-", "1"}], ")"}], "2"]]}]]}], TraditionalForm]],
+  CellChangeTimes->{{3.910861979123197*^9, 3.9108619999508753`*^9}, {
+    3.91086222963589*^9, 3.9108622426687517`*^9}, 3.910862460959608*^9, 
+    3.9108626243521233`*^9, 3.9114609992207623`*^9, 3.911461049933278*^9, 
+    3.911461104221305*^9, 3.9114637937132893`*^9, {3.9114638920883408`*^9, 
+    3.9114638987610273`*^9}, {3.911464017519855*^9, 3.911464020308721*^9}, 
+    3.911472250412627*^9, 3.911554645377158*^9},ExpressionUUID->
+  "8632e220-702c-4b01-b211-af5afc459f78"],
+ "(Equation A17). We therefore obtain the overall marginal change in \
+neighbour-modulated fitness associated with a slight change in behaviour, on \
+the (true) assumption that relatedness emerges from model parameters.  The \
+\[OpenCurlyQuote]margclosed\[CloseCurlyQuote] notation is used to represent \
+the marginal fitness change, and the closed model setting. This is Equation \
+G3 in the SI. "
+}], "Text",
+ CellChangeTimes->{{3.915176441285725*^9, 3.915176587713168*^9}, {
+  3.915177463317815*^9, 3.9151774714126167`*^9}, {3.915203527275138*^9, 
+  3.915203542206978*^9}},ExpressionUUID->"896dd8e5-f168-4eb7-ab14-\
+135cb5ea234b"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"TraditionalForm", "[", 
+  RowBox[{"margclosed", "=", 
+   RowBox[{"FullSimplify", "[", 
+    RowBox[{
+     RowBox[{
+      RowBox[{"r", " ", "bm"}], " ", "-", " ", "cm"}], "/.", 
+     RowBox[{"{", 
+      RowBox[{"r", "->", 
+       RowBox[{"1", "/", 
+        RowBox[{"(", 
+         RowBox[{"1", "-", 
+          RowBox[{
+           RowBox[{"(", 
+            RowBox[{
+             RowBox[{"(", 
+              RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N"}], ")"}], 
+           "/", 
+           RowBox[{
+            RowBox[{"(", 
+             RowBox[{"m", "-", "1"}], ")"}], "^", "2"}]}]}], ")"}]}]}], 
+      "}"}]}], "]"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.91517659618088*^9, 3.915176615645871*^9}, 
+   3.915177444830543*^9, {3.915177479766621*^9, 3.915177481869033*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"9cac7589-1abc-41d4-8acb-6f3b95750918"],
+
+Cell[BoxData[
+ FormBox[
+  RowBox[{"-", 
+   FractionBox[
+    RowBox[{"c", " ", 
+     RowBox[{"(", 
+      RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", "N", " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"f", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}]}], "-", "N"}], ")"}]}], 
+    RowBox[{
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{
+        RowBox[{"(", 
+         RowBox[{"m", "-", "2"}], ")"}], " ", "m", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}]}], "-", "1"}], ")"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"c", " ", "y", " ", 
+        RowBox[{"(", 
+         RowBox[{
+          RowBox[{"f", " ", 
+           RowBox[{"(", 
+            RowBox[{"-", "N"}], ")"}]}], "+", "f", "+", "N"}], ")"}]}], "+", 
+       RowBox[{"d", " ", 
+        RowBox[{"(", 
+         RowBox[{"N", "-", "1"}], ")"}], " ", "y"}], "+", "d", "-", "N"}], 
+      ")"}]}]]}], TraditionalForm]], "Output",
+ CellChangeTimes->{
+  3.915176616702622*^9, {3.915177474947645*^9, 3.91517748224699*^9}, 
+   3.91517752370538*^9, 3.9151781382837954`*^9, 3.915205815255666*^9},
+ CellLabel->
+  "Out[33]//TraditionalForm=",ExpressionUUID->"0b42a165-b79b-487b-bafd-\
+35e753029408"]
+}, Open  ]],
+
+Cell["\<\
+The condition for a slight increase in the behaviour to be favoured is \
+calculated using the below command. We see that, in this \
+\[OpenCurlyQuote]closed\[CloseCurlyQuote] setting, the behaviour is never \
+favoured.\
+\>", "Text",
+ CellChangeTimes->{{3.9151769454838057`*^9, 
+  3.9151769716502733`*^9}},ExpressionUUID->"e1479d8b-1cd7-4569-aa43-\
+c1acec44fa44"],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"FullSimplify", "[", 
+  RowBox[{"Reduce", "[", 
+   RowBox[{
+    RowBox[{"{", 
+     RowBox[{
+      RowBox[{"0", "<", "c", "<", "1"}], "&&", 
+      RowBox[{"0", "<", "f", "<", "1"}], "&&", 
+      RowBox[{"N", ">", "1"}], "&&", 
+      RowBox[{"0", "<=", "y", "<=", "1"}], "&&", 
+      RowBox[{"0", "<", "d", "<", "1"}], "&&", 
+      RowBox[{"1", ">", 
+       RowBox[{"d", "+", "c"}]}], "&&", 
+      RowBox[{"0", "<", "m", "<", "1"}], "&&", 
+      RowBox[{"margclosed", ">", "0"}]}], "}"}], ",", 
+    RowBox[{"Backsubstitution", "->", "True"}]}], "]"}], "]"}]], "Input",
+ CellChangeTimes->{{3.91086262736821*^9, 3.910862678869877*^9}, 
+   3.911472300688035*^9, {3.911472332014091*^9, 3.911472344399435*^9}, {
+   3.911548186771056*^9, 3.911548189170001*^9}, 3.9115482347234707`*^9, {
+   3.9115482852122593`*^9, 3.9115483160155067`*^9}, {3.915176872170781*^9, 
+   3.9151769012207336`*^9}, {3.915177491578352*^9, 3.9151774916856956`*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"298abba8-bee2-4107-bcf1-5eee032e0b0d"],
+
+Cell[BoxData["False"], "Output",
+ CellChangeTimes->{
+  3.910862634126298*^9, 3.910862679713876*^9, 3.911377178731172*^9, {
+   3.911472315555702*^9, 3.911472345188623*^9}, 3.911548193938794*^9, 
+   3.911548237122397*^9, {3.91154829494869*^9, 3.911548316947212*^9}, 
+   3.9115546458318996`*^9, 3.9151769039327383`*^9, 3.915177492573509*^9, 
+   3.915177527058111*^9, 3.915178142722644*^9, 3.915205817122501*^9},
+ CellLabel->"Out[34]=",ExpressionUUID->"bb0733c9-b206-497e-8645-0e7c8becb354"]
+}, Open  ]]
+}, Closed]]
+},
+WindowSize->{Full, Full},
+WindowMargins->{{12, Automatic}, {Automatic, 0}},
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 16, 2022)",
+StyleDefinitions->"Default.nb",
+ExpressionUUID->"067a1ae8-8800-4868-8d33-62a8c0f0cb78"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[558, 20, 1342, 36, 81, "Text",ExpressionUUID->"685cb5ce-8020-48ce-96b9-a75886698576"],
+Cell[CellGroupData[{
+Cell[1925, 60, 384, 7, 67, "Section",ExpressionUUID->"eef3e3db-99f7-470a-892d-dcbb5b19ef05"],
+Cell[2312, 69, 356, 7, 35, "Text",ExpressionUUID->"45d5df5b-96cb-462e-9b49-9c92bba9c003"],
+Cell[2671, 78, 2550, 73, 70, "Input",ExpressionUUID->"6ab4c242-b49a-4fa1-ae28-0ce77f725fde"],
+Cell[5224, 153, 614, 10, 58, "Text",ExpressionUUID->"9bb87755-b4bb-4c9f-b40f-dfb9b9707cb4"],
+Cell[CellGroupData[{
+Cell[5863, 167, 568, 16, 52, "Input",ExpressionUUID->"24bf0ab3-3e66-438b-8020-e04921876f38"],
+Cell[6434, 185, 1208, 37, 67, "Output",ExpressionUUID->"9a9dd9f8-8161-4db8-80a5-7ac79e94038c"]
+}, Open  ]],
+Cell[7657, 225, 664, 12, 58, "Text",ExpressionUUID->"d05b3397-2c4e-443c-8583-32f09e2bcb9b"],
+Cell[CellGroupData[{
+Cell[8346, 241, 827, 17, 30, "Input",ExpressionUUID->"a3605713-800e-4336-b1c7-0e4a604a5416"],
+Cell[9176, 260, 1545, 41, 67, "Output",ExpressionUUID->"43252716-7a25-4b3f-b1ec-d78da6344c4c"]
+}, Open  ]],
+Cell[10736, 304, 615, 10, 58, "Text",ExpressionUUID->"f25a8219-dcda-4207-b4eb-94d684749939"],
+Cell[CellGroupData[{
+Cell[11376, 318, 576, 11, 30, "Input",ExpressionUUID->"05008782-7791-4357-a2a3-c1f9668e81c2"],
+Cell[11955, 331, 1579, 43, 67, "Output",ExpressionUUID->"bc17dae6-4a52-4137-9794-208bfbc0a601"]
+}, Open  ]],
+Cell[13549, 377, 449, 9, 35, "Text",ExpressionUUID->"1c5fee6b-d001-4e42-9b27-a5410b7e9ee9"],
+Cell[CellGroupData[{
+Cell[14023, 390, 1183, 22, 30, "Input",ExpressionUUID->"ae5ebd9c-9f30-48b5-8b3b-e52d39d1b9de"],
+Cell[15209, 414, 707, 10, 34, "Output",ExpressionUUID->"df553131-f395-46aa-9e32-17ffc07809c8"]
+}, Open  ]],
+Cell[15931, 427, 1726, 34, 101, "Text",ExpressionUUID->"6a37b233-19a5-434c-a5a3-b4d6384a34e0"],
+Cell[CellGroupData[{
+Cell[17682, 465, 880, 24, 30, "Input",ExpressionUUID->"501e4be6-f164-4fcd-81f3-e5b1586b63ad"],
+Cell[18565, 491, 1416, 45, 67, "Output",ExpressionUUID->"bb93181e-71ed-4a1b-88f9-be476181e4e7"]
+}, Open  ]],
+Cell[19996, 539, 433, 9, 35, "Text",ExpressionUUID->"3766a80a-e8dd-4ce5-86a6-6c26e8d93045"],
+Cell[CellGroupData[{
+Cell[20454, 552, 1032, 21, 30, "Input",ExpressionUUID->"6d5f0305-1b66-4d15-a0f2-8af35835d611"],
+Cell[21489, 575, 488, 7, 34, "Output",ExpressionUUID->"a189c584-8d12-4383-ba35-d645e1533286"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[22026, 588, 342, 7, 53, "Section",ExpressionUUID->"aa1c85bd-0246-49e0-a27e-a25648c6e879"],
+Cell[22371, 597, 356, 7, 35, "Text",ExpressionUUID->"f5580ae9-2638-4cb4-a379-650590143669"],
+Cell[22730, 606, 5063, 147, 110, "Input",ExpressionUUID->"a21b650b-5cbd-4bbc-a541-202c40a61cec"],
+Cell[27796, 755, 614, 10, 58, "Text",ExpressionUUID->"a96f95d9-564e-4b5c-a70a-9626482de7a4"],
+Cell[CellGroupData[{
+Cell[28435, 769, 569, 16, 52, "Input",ExpressionUUID->"d67c21ef-3a92-4094-98b7-603032d7a27a"],
+Cell[29007, 787, 1337, 42, 71, "Output",ExpressionUUID->"5395bab6-f9af-41c1-b07e-abf14da32504"]
+}, Open  ]],
+Cell[30359, 832, 662, 12, 58, "Text",ExpressionUUID->"7bb8876d-2031-40ad-a1c5-a0990cd0c3f0"],
+Cell[CellGroupData[{
+Cell[31046, 848, 828, 17, 30, "Input",ExpressionUUID->"0f5499f3-9efa-4849-83aa-c55b74d53ebc"],
+Cell[31877, 867, 1935, 52, 71, "Output",ExpressionUUID->"423002de-b226-4064-bbf5-5eb7c01c6af7"]
+}, Open  ]],
+Cell[33827, 922, 612, 10, 58, "Text",ExpressionUUID->"1d642f2c-5c9d-4bb4-8ac9-93d16e2e2944"],
+Cell[CellGroupData[{
+Cell[34464, 936, 577, 11, 30, "Input",ExpressionUUID->"49378176-ba94-42c9-b7eb-d34187383634"],
+Cell[35044, 949, 2137, 60, 71, "Output",ExpressionUUID->"cca2276d-eed1-4dd6-8a39-a67341de0a90"]
+}, Open  ]],
+Cell[37196, 1012, 467, 8, 35, "Text",ExpressionUUID->"814091cb-f6e2-4a7e-940b-e6b192478abe"],
+Cell[CellGroupData[{
+Cell[37688, 1024, 1176, 23, 30, "Input",ExpressionUUID->"29864960-ef33-4814-bb7b-347be41625c6"],
+Cell[38867, 1049, 686, 10, 34, "Output",ExpressionUUID->"32dd3ef0-5050-4158-b811-8f37073df1f4"]
+}, Open  ]],
+Cell[39568, 1062, 1259, 27, 65, "Text",ExpressionUUID->"53ef27b6-ade9-45ec-ab9d-3668546edfd1"],
+Cell[CellGroupData[{
+Cell[40852, 1093, 920, 20, 30, "Input",ExpressionUUID->"de382b43-3f17-4a3a-9c8e-9108952c42cc"],
+Cell[41775, 1115, 3729, 107, 94, "Output",ExpressionUUID->"1708905a-0671-498d-b448-65ac497d3056"]
+}, Open  ]],
+Cell[45519, 1225, 1676, 33, 101, "Text",ExpressionUUID->"5ebf40e9-1778-43c5-be7a-7405ac196882"],
+Cell[CellGroupData[{
+Cell[47220, 1262, 881, 24, 30, "Input",ExpressionUUID->"ea10e739-a763-45e3-b542-84d1f16d9f27"],
+Cell[48104, 1288, 1195, 38, 67, "Output",ExpressionUUID->"b8a55fff-b9fa-402b-a958-1fd496e964a6"]
+}, Open  ]],
+Cell[49314, 1329, 371, 8, 35, "Text",ExpressionUUID->"7819eeb0-1f08-466f-b046-51cb1b22efc3"],
+Cell[CellGroupData[{
+Cell[49710, 1341, 1033, 21, 30, "Input",ExpressionUUID->"8ffffd61-8406-434f-87f4-617d3d00c477"],
+Cell[50746, 1364, 464, 7, 34, "Output",ExpressionUUID->"6ba660a8-cd19-4d69-ad3c-2182ef143fde"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[51259, 1377, 439, 8, 53, "Section",ExpressionUUID->"040398a3-4a45-46e3-9cd1-865e1abed546"],
+Cell[51701, 1387, 323, 6, 35, "Text",ExpressionUUID->"50c16f6b-77bd-401d-81a4-4ae4d681c945"],
+Cell[52027, 1395, 2431, 71, 47, "Input",ExpressionUUID->"4104c392-96b6-4c29-ab36-52d0aba19d49"],
+Cell[54461, 1468, 614, 10, 58, "Text",ExpressionUUID->"a952d5f5-de64-4dce-92fd-00031a61f240"],
+Cell[CellGroupData[{
+Cell[55100, 1482, 569, 16, 52, "Input",ExpressionUUID->"fe76039b-3638-4c90-808f-c65e0a2cc2e9"],
+Cell[55672, 1500, 1094, 32, 67, "Output",ExpressionUUID->"2a21b6fd-486b-4c33-9615-7e7d954a4122"]
+}, Open  ]],
+Cell[56781, 1535, 662, 12, 58, "Text",ExpressionUUID->"4c2c2ffb-e217-490f-8eb3-5e5f469f813c"],
+Cell[CellGroupData[{
+Cell[57468, 1551, 828, 17, 30, "Input",ExpressionUUID->"90659cd5-c69b-42dc-8612-66b47068ad11"],
+Cell[58299, 1570, 1461, 36, 67, "Output",ExpressionUUID->"466dad75-3e3f-47f5-93a7-6d25933776cd"]
+}, Open  ]],
+Cell[59775, 1609, 615, 10, 58, "Text",ExpressionUUID->"cddfbd31-7bed-42b9-bcc7-cd4999122f0a"],
+Cell[CellGroupData[{
+Cell[60415, 1623, 577, 11, 30, "Input",ExpressionUUID->"0af63682-ff07-472f-86b3-c74d732ea5ea"],
+Cell[60995, 1636, 1476, 38, 67, "Output",ExpressionUUID->"757b27c2-6fe1-41a3-8216-aa8a5e5bc7b1"]
+}, Open  ]],
+Cell[62486, 1677, 1435, 28, 40, "Text",ExpressionUUID->"30346f09-b0fa-4497-a9f2-d5ce3da08d84"],
+Cell[CellGroupData[{
+Cell[63946, 1709, 1184, 22, 30, "Input",ExpressionUUID->"463c8ef1-f95e-4223-98a3-e0f5eb86ecbd"],
+Cell[65133, 1733, 2934, 78, 74, "Output",ExpressionUUID->"b0dde24b-1bfb-4782-995b-593742e0045d"]
+}, Open  ]],
+Cell[68082, 1814, 1725, 34, 101, "Text",ExpressionUUID->"9841d958-651f-40e3-8193-0acb8b57e09b"],
+Cell[CellGroupData[{
+Cell[69832, 1852, 881, 24, 30, "Input",ExpressionUUID->"9f8da327-e8ab-4d0b-9265-46ebb86d51ca"],
+Cell[70716, 1878, 1354, 41, 67, "Output",ExpressionUUID->"73d1f312-1c7c-49ad-8c28-0565a21b9f01"]
+}, Open  ]],
+Cell[72085, 1922, 1347, 27, 63, "Text",ExpressionUUID->"00d7ef1d-e8ae-44e1-8141-fd0e3cf02d64"],
+Cell[CellGroupData[{
+Cell[73457, 1953, 1033, 21, 30, "Input",ExpressionUUID->"1f5b45f3-8de4-47bc-a39d-7612dbd3b2c5"],
+Cell[74493, 1976, 1616, 45, 51, "Output",ExpressionUUID->"0795684b-60eb-4756-83db-fa7660c2ea7c"]
+}, Open  ]]
+}, Closed]],
+Cell[CellGroupData[{
+Cell[76158, 2027, 365, 7, 53, "Section",ExpressionUUID->"5e6dbf40-4a8f-4fe4-93ed-1ed86cbee34d"],
+Cell[76526, 2036, 304, 6, 35, "Text",ExpressionUUID->"179394d0-db8a-43a2-8181-6dfaa582789e"],
+Cell[76833, 2044, 4750, 140, 87, "Input",ExpressionUUID->"c9b86c00-c65a-4e56-9b5f-c789e091a106"],
+Cell[81586, 2186, 614, 10, 58, "Text",ExpressionUUID->"725accf9-794f-475c-b7b9-29ca28733c18"],
+Cell[CellGroupData[{
+Cell[82225, 2200, 569, 16, 52, "Input",ExpressionUUID->"c4be2823-9b43-489e-80e0-b90c9ed5ef61"],
+Cell[82797, 2218, 1309, 40, 71, "Output",ExpressionUUID->"f13752ef-3b22-4579-b6bb-59b822e50954"]
+}, Open  ]],
+Cell[84121, 2261, 662, 12, 58, "Text",ExpressionUUID->"d8f09699-d5da-46db-bba5-ad240c940a93"],
+Cell[CellGroupData[{
+Cell[84808, 2277, 828, 17, 30, "Input",ExpressionUUID->"adc28761-8fbb-4d25-b2d6-06cc58d79bc4"],
+Cell[85639, 2296, 1846, 49, 71, "Output",ExpressionUUID->"6efe32f4-8cd2-4586-826f-ec881310773b"]
+}, Open  ]],
+Cell[87500, 2348, 613, 10, 58, "Text",ExpressionUUID->"4b7fc4aa-a658-49b6-8cca-d93440e90155"],
+Cell[CellGroupData[{
+Cell[88138, 2362, 577, 11, 30, "Input",ExpressionUUID->"0225feb0-71ca-4190-b536-c9cbee7cacb3"],
+Cell[88718, 2375, 2052, 58, 71, "Output",ExpressionUUID->"2d45c24d-160b-448b-8519-b77b2dcd9f22"]
+}, Open  ]],
+Cell[90785, 2436, 516, 9, 35, "Text",ExpressionUUID->"f9e653d0-4271-46db-8c5f-f52d1960fd8e"],
+Cell[CellGroupData[{
+Cell[91326, 2449, 1222, 23, 30, "Input",ExpressionUUID->"64b5d706-b0a7-4a82-bf91-c0e42723d69e"],
+Cell[92551, 2474, 708, 10, 34, "Output",ExpressionUUID->"6602f408-9d02-44e5-bead-26de8999afa6"]
+}, Open  ]],
+Cell[93274, 2487, 1386, 27, 63, "Text",ExpressionUUID->"55c2aa31-f5bf-43bb-bb55-1c34a3a80b43"],
+Cell[CellGroupData[{
+Cell[94685, 2518, 948, 21, 30, "Input",ExpressionUUID->"677d8d81-1c11-4a10-8af1-2befe2e38179"],
+Cell[95636, 2541, 1690, 45, 51, "Output",ExpressionUUID->"5583c201-7a91-4af1-853f-cc45063a5ce6"]
+}, Open  ]],
+Cell[97341, 2589, 1674, 33, 101, "Text",ExpressionUUID->"896dd8e5-f168-4eb7-ab14-135cb5ea234b"],
+Cell[CellGroupData[{
+Cell[99040, 2626, 881, 24, 30, "Input",ExpressionUUID->"9cac7589-1abc-41d4-8acb-6f3b95750918"],
+Cell[99924, 2652, 1215, 37, 67, "Output",ExpressionUUID->"0b42a165-b79b-487b-bafd-35e753029408"]
+}, Open  ]],
+Cell[101154, 2692, 371, 8, 35, "Text",ExpressionUUID->"e1479d8b-1cd7-4569-aa43-c1acec44fa44"],
+Cell[CellGroupData[{
+Cell[101550, 2704, 1033, 21, 30, "Input",ExpressionUUID->"298abba8-bee2-4107-bcf1-5eee032e0b0d"],
+Cell[102586, 2727, 487, 7, 34, "Output",ExpressionUUID->"bb0733c9-b206-497e-8645-0e7c8becb354"]
+}, Open  ]]
+}, Closed]]
+}
+]
+*)
+

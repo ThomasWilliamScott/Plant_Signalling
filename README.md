@@ -7,4 +7,4 @@ The 'Numerical_demonstration_signalling_never_favoured_Model_J.m' file is a Matl
 
 The 'Model_K_Numerical_Analysis.m' file is a Matlab script implementing the numerical procedure used to analyse Model K.
 
-The 'Results_Figure.m' file is a Matlab script generating the results figure (Figure 2 in the main text).
+The 'Results_Figures.m' file is a Matlab script generating the results figures (Figures 2 & 3 in the main text, and Figure S1 in the SI).

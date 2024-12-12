@@ -1,5 +1,5 @@
 % This script implements the numerical procedure used to find the long term
-% trait values for Model K. In Model K, signalling, signal-response and
+% trait values for Model M. In Model M, signalling, signal-response and
 % signal-dishonesty coevolve. It is an open model where migration goes
 % before population regulation, which are required for honest signalling
 % to evolve.
@@ -43,15 +43,15 @@ for curr = 1:length(rR)
 % This for loop iterates over time steps
 for t=1:T
 
-    % y selection differential (response). Equation K7 in the SI is
+    % y selection differential (response). Equation M7 in the SI is
     % obtained by setting this to be greater than zero.
     margopeny =  p*d - s*((1-p)*z+p);
 
-    % z selection differential (dishonesty). Equation K8 in the SI is
+    % z selection differential (dishonesty). Equation M8 in the SI is
     % obtained by setting this to be greater than zero.
     margopenz = ((p-1)*x*((N-1)*r*(s*y*((m-2)*m*(N-1)-1)-c*(m-1)^2*((g-1)*N-g))-c*((g-1)*N-g)*((m-1)^2-N)+(m-1)^2*(N-1)*s*y))/(N*(x*(c*((g-1)*N-g)*((p-1)*z-p)-(N-1)*y*(p*(d-s)+(p-1)*s*z))+N*(d*p-1)));
     
-    % x selection differential (signalling). Equation K9 in the SI is
+    % x selection differential (signalling). Equation M9 in the SI is
     % obtained by setting this to be greater than zero.
     margopenx = r - (-c*((-1+m)^2-N)*(g*(-1+N)-N)*(-p+(-1+p)*z)+(-1+m)^2*(-1+N)*y*(p*(d-s)+(-1+p)*s*z))/((-1+N)*(c*(-1+m)^2*(g*(-1+N)-N)*(-p+(-1+p)*z)-(-1+(-2+m)*m*(-1+N))*y*(p*(d-s)+(-1+p)*s*z))); 
     
@@ -114,7 +114,7 @@ colorbar
 caxis([0 1])
 ylabel('relatedness (r)')
 xlabel('migration (m)')
-title('Equilibrium signalling (x^*) in Model K')
+title('Equilibrium signalling (x^*) in Model M')
 
 % This plots signal-response as a heatmap, where migration and
 % relatedness are varied on each axis.
@@ -127,7 +127,7 @@ colorbar
 caxis([0 1])
 ylabel('relatedness (r)')
 xlabel('migration (m)')
-title('Equilibrium signal response (y^*) in Model K')
+title('Equilibrium signal response (y^*) in Model M')
 
 % This plots signal-honesty as a heatmap, where migration and
 % relatedness are varied on each axis.
@@ -140,12 +140,12 @@ colorbar
 caxis([0 1])
 ylabel('relatedness (r)')
 xlabel('migration (m)')
-title('Equilibrium signal honesty (1-z^*) in Model K')
+title('Equilibrium signal honesty (1-z^*) in Model M')
 
 % This plots a threshold, above which, the expression provided in Equation 
 % D1 is greater than zero. Above this line, signalling evolves in Model D.
 % We can see by comparing this figure with the 3 previous heatmaps that, in
-% the present model (Model K), honest signalling evolves 'above this line',
+% the present model (Model M), honest signalling evolves 'above this line',
 % and signalling does not evolve 'below this line'.
 figure
 threshold = (-d.*(-1+mR).^2.*(-1+N)-c.*((-1+mR).^2-N).*(-g+(-1+g).*N)+(-1+mR).^2.*(-1+N).*s)./((-1+N).*(-d.*(-1+mR).^2+d.*(-2+mR).*mR.*N+c.*(-1+mR).^2.*(-g+(-1+g).*N)+s-(-2+mR).*mR.*(-1+N).*s));

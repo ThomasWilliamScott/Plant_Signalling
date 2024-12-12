@@ -1,5 +1,5 @@
 % The purpose of this script is to check whether the condition for
-% signalling to be favoured in Model J (i.e. the main model presented in 
+% signalling to be favoured in Model L (i.e. the main model presented in 
 % the main text) is ever satisfied. We do so by sweeping through all
 % combinations of parameter values, and seeing if the condition is ever
 % satisfied. We find that it isn't.
@@ -47,11 +47,11 @@ for d_cur = 1:length(dR)
     d = dR(d_cur);
 
         % This is the ESS value for y (signal response). This is Equation
-        % J13 in the SI.
+        % L13 in the SI.
         y = (c*(g+N-g*N))/s;
 
         % This is the ESS value for z (signal dishonesty). This is Equation
-        % J20 in the SI.
+        % L20 in the SI.
         z = (p*(-d + s))/((-1 + p)*s);
 
 

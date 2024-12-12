@@ -8,3 +8,5 @@ The 'Numerical_demonstration_signalling_never_favoured_Model_L.m' file is a Matl
 The 'Model_M_Numerical_Analysis.m' file is a Matlab script implementing the numerical procedure used to analyse Model M.
 
 The 'Results_Figures.m' file is a Matlab script generating the results figures (Figures 2 & 3 in the main text, and Figure S1 in the SI).
+
+The Mathematica script was made with Mathematica 13.1 and the Matlab scripts were made with Matlab R2023b.
